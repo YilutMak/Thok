@@ -9,3 +9,47 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  id           Int        @id @default(autoincrement())
+  username     String     @unique
+  email        String     @unique
+  passwordHash String
+  training     Training[]
+  trials       Trials[]
+  exp          Int
+  lv           Int
+  borders      String
+  colors       String
+  trainingPTs  Int
+}
+
+model Training {
+  id          Int     @id @default(autoincrement())
+  user        User?   @relation(fields: [userId], references: [id])
+  userId      Int?
+  punctuation Boolean
+  number      Boolean
+  wpm         Int
+  acc         String
+  time        String
+  raw         Int
+  characters  Int
+  passage     String
+  error       String
+}
+
+model Trials {
+  id          Int     @id @default(autoincrement())
+  user        User?   @relation(fields: [userId], references: [id])
+  userId      Int?
+  punctuation Boolean
+  number      Boolean
+  wpm         Int
+  acc         String
+  time        String
+  raw         Int
+  characters  Int
+  passage     String
+  error       String
+}

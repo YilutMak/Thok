@@ -1,4 +1,5 @@
 # Init Instructions
+
 - Clone and rename folder $ git clone git@github.com:dented-academy/next-starter.git [your_project_name_here]
 - Find and rename all instance of [your_project_name_here] to your actual project name
 - Run `$ rm -rf .git && git init`
@@ -15,11 +16,15 @@
 - Push to your github repo (create one if none exist)
 
 # Prisma Migration
+
 After adding/modifying your schema use the package script `migrate` to run the migration
+
 - `$ npm run migrate` (this is equivalent to `npx prisma migrate dev`)
 
 # Vercel Deployment
+
 ## Supabase
+
 - Create a Supabase account
 - Create a new project with the region in `Singapore` (REMEMBER THE PASSWORD! YOU NEED THIS LATER!)
 - Once the project has completed the setup, go to `Settings (the cog wheel) -> Database -> Connection info`
@@ -27,6 +32,7 @@ After adding/modifying your schema use the package script `migrate` to run the m
   - `DATABASE_URL="postgresql://postgres:[the password you used to create the project]@[Host]:5432/postgres"`
 
 ## Vercel
+
 - Create a Vercel account
 - Create a new project by selecting the appropriate github repo.
 - In the project setup screen, add `Environment Variables`
@@ -45,15 +51,18 @@ After adding/modifying your schema use the package script `migrate` to run the m
 > You might need to redeploy for settings to take effect!
 
 ## Redeployment
+
 - From your dashboard, go to `[Your project] -> Deployments -> Select the vertical ... of your desire deployment -> Redeploy`
 
 ## New Deployment
+
 - Use the command:
   - `$ vercel` to deploy the current branch as `preview`
   - `$ vercel --prod` to deploy the current branch as `production`
 - Once you have `linked` your vercel project to your github repo, you can deploy by pushing to the `master` branch
 
 # Heroku Deployment
+
 - Run `$ heroku create` (This create another remote name `heroku` just like `origin`)
 - Run `$ heroku addons:create papertrail` (this adds a service that will keep your logs)
 - Run `$ heroku addons:create heroku-postgresql:hobby-dev` (this adds a postgresql)

@@ -1,5 +1,9 @@
+import { useEffect } from 'react'
+import { useGenPhrase } from '@/contexts/genPhrase'
+import { useTyping } from '@/contexts/typing'
+
 export default function Home() {
   return (
-    <h1 className="text-center my-5">Home Page</h1>
+    <div className="d-flex">Homepage</div>
   )
 }

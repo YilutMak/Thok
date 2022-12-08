@@ -1,0 +1,276 @@
+const validKeys = ' ' || '!' || '"' || '#' || '$' || '&' || '(' || ')' || '*' || '+' || ',' || '-' || '.' || '/' || '0' || '1' || '2' || '3' || '4' || '5' || '6' || '7' || '8' || '9' || ':' || ';' || '<' || '=' || '>' || '?' || '@' || 'A' || 'B' || 'C' || 'D' || 'E' || 'F' || 'G' || 'H' || 'I' || 'J' || 'K' || 'L' || 'M' || 'N' || 'O' || 'P' || 'Q' || 'R' || 'S' || 'T' || 'U' || 'V' || 'W' || 'X' || 'Y' || 'Z' || '[' || ']' || '^' || '_' || '`' || 'a' || 'b' || 'c' || 'd' || 'e' || 'f' || 'g' || 'h' || 'i' || 'j' || 'k' || 'l' || 'm' || 'n' || 'o' || 'p' || 'q' || 'r' || 's' || 't' || 'u' || 'v' || 'w' || 'x' || 'y' || 'z' || '{' || '|' || '}' || '~'
+
+
+        case '#':
+      typedPassage.push('#')
+      break
+      case '$':
+      typedPassage.push('$')
+      break
+          case '%':
+      typedPassage.push('%')
+      break
+          case '&':
+      typedPassage.push('&')
+      break
+          case '(':
+      typedPassage.push('(')
+      break
+          case ')':
+      typedPassage.push(')')
+      break
+          case '*':
+      typedPassage.push('*')
+      break
+          case '+':
+      typedPassage.push('+')
+      break
+          case ',':
+      typedPassage.push(',')
+      break
+          case '-':
+      typedPassage.push('-')
+      break
+          case '.':
+      typedPassage.push('.')
+      break
+          case  '/':
+      typedPassage.push( '/')
+      break
+          case '0':
+      typedPassage.push('0')
+      break
+          case '1':
+      typedPassage.push('1')
+      break
+          case '2':
+      typedPassage.push('2')
+      break
+          case '3':
+      typedPassage.push('3')
+      break
+          case '4':
+      typedPassage.push('4')
+      break
+          case '5':
+      typedPassage.push('5')
+      break
+          case '6':
+      typedPassage.push('6')
+      break
+          case '7':
+      typedPassage.push('7')
+      break
+          case '8':
+      typedPassage.push('8')
+      break
+          case '9':
+      typedPassage.push('9')
+      break
+          case ':':
+      typedPassage.push(':')
+      break
+          case ';':
+      typedPassage.push(';')
+      break
+          case '<':
+      typedPassage.push('<')
+      break
+          case '=':
+      typedPassage.push('=')
+      break
+          case '>':
+      typedPassage.push('>')
+      break
+          case  '?':
+      typedPassage.push('?')
+      break
+          case '@':
+      typedPassage.push('@')
+      break
+          case 'A':
+      typedPassage.push('A')
+      break
+          case 'B':
+      typedPassage.push('B')
+      break
+          case 'C':
+      typedPassage.push('C')
+      break
+          case 'D':
+      typedPassage.push('D')
+      break
+          case 'E':
+      typedPassage.push('E')
+      break
+          case 'F':
+      typedPassage.push('F')
+      break
+          case 'G':
+      typedPassage.push('G')
+      break
+          case 'H':
+      typedPassage.push('H')
+      break
+          case 'I':
+      typedPassage.push('I')
+      break
+          case 'J':
+      typedPassage.push('J')
+      break
+          case 'K':
+      typedPassage.push('K')
+      break
+          case 'L':
+      typedPassage.push('L')
+      break
+          case 'M':
+      typedPassage.push('M')
+      break
+          case 'N':
+      typedPassage.push('N')
+      break
+          case 'O':
+      typedPassage.push('O')
+      break
+          case 'P':
+      typedPassage.push('P')
+      break
+          case 'Q':
+      typedPassage.push('Q')
+      break
+          case 'R':
+      typedPassage.push('R')
+      break
+          case 'S':
+      typedPassage.push('S')
+      break
+          case 'T':
+      typedPassage.push('T')
+      break
+          case 'U':
+      typedPassage.push('U')
+      break
+          case 'V':
+      typedPassage.push('V')
+      break
+          case 'W':
+      typedPassage.push('W')
+      break
+          case 'X':
+      typedPassage.push('X')
+      break
+          case 'Y':
+      typedPassage.push('Y')
+      break
+          case 'Z':
+      typedPassage.push('Z')
+      break
+          case '[':
+      typedPassage.push('[')
+      break
+          case ']':
+      typedPassage.push(']')
+      break
+          case '^':
+      typedPassage.push('^')
+      break
+          case '_':
+      typedPassage.push('_')
+      break
+          case '`':
+      typedPassage.push('`')
+      break
+          case 'a':
+      typedPassage.push('a')
+      break
+          case 'b':
+      typedPassage.push('b')
+      break
+          case 'c':
+      typedPassage.push('c')
+      break
+          case 'd':
+      typedPassage.push('d')
+      break
+          case 'e':
+      typedPassage.push('e')
+      break
+          case 'f':
+      typedPassage.push('f')
+      break
+          case 'g':
+      typedPassage.push('g')
+      break
+          case 'h':
+      typedPassage.push('h')
+      break
+          case 'i':
+      typedPassage.push('i')
+      break
+          case 'j':
+      typedPassage.push('j')
+      break
+          case 'k':
+      typedPassage.push('k')
+      break
+          case 'l':
+      typedPassage.push('l')
+      break
+          case 'm':
+      typedPassage.push('m')
+      break
+          case 'n':
+      typedPassage.push('n')
+      break
+          case 'o':
+      typedPassage.push('o')
+      break
+          case 'p':
+      typedPassage.push('p')
+      break
+          case 'q':
+      typedPassage.push('q')
+      break
+          case 'r':
+      typedPassage.push('r')
+      break
+          case 's':
+      typedPassage.push('s')
+      break
+          case 't':
+      typedPassage.push('t')
+      break
+          case 'u':
+      typedPassage.push('u')
+      break
+          case 'v':
+      typedPassage.push('v')
+      break
+          case 'w':
+      typedPassage.push('w')
+      break
+          case 'x':
+      typedPassage.push('x')
+      break
+          case 'y':
+      typedPassage.push('y')
+      break
+          case 'z':
+      typedPassage.push('z')
+      break
+          case '{':
+      typedPassage.push('{')
+      break
+          case '|':
+      typedPassage.push('|')
+      break
+          case '}':
+      typedPassage.push('}')
+      break
+          case '~':
+      typedPassage.push('~')
+      break
+
+
+        // const modifiers = 'Backspace' || 'Shift' || 'Enter' || 'CapsLock' || 'Tab' || 'Control' || 'Meta' || 'Alt' || 'F1' || 'F2' || 'F3' || 'F4' || 'F5' || 'F6' || 'F7' || 'F8' || 'F9' || 'F10' || 'F11' || 'F12' || 'ScrollLock' || 'Pause' || 'Insert' || 'Delete' || 'Home' || 'End' || 'ArrowLeft' || 'ArrowRight' || 'ArrowUp' || 'ArrowDown' || 'PageUP' || 'PageDown' || 'Escape'
