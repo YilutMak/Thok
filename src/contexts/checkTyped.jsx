@@ -1,5 +1,5 @@
 import React, { useState, createContext, useContext } from 'react'
-// import produce from 'immer'
+import produce from 'immer'
 
 const checkTypedContext = createContext()
 
@@ -23,9 +23,9 @@ export function CheckTypedProvider({ children }) {
     }
 
     const charInitializeStatus = () => {
-      console.log('passage:', passage)
+      // console.log('passage:', passage)
       // const inactiveChar = []
-      const inactiveChar = passage.map((word) => word.map((character) => character.map(() => 'unactiveChar')))
+      const inactiveChar = passage.map((word) => word.map((character) => character.map(() => 'inactiveChar')))
       inactiveChar[0][0].pop()
       inactiveChar[0][0].unshift('activeChar')
       return inactiveChar
@@ -37,9 +37,26 @@ export function CheckTypedProvider({ children }) {
     })
   }
 
+  const updateWordStatus = () => {}
+
+  const updateCharStatus = (activeWordIndex, activeCharIndex, wordStat, charStat) => {
+    // console.log(wordStat)
+    // console.log(charStat)
+    // console.log(checkTypeState.charStatus[activeWordIndex][0][activeCharIndex])
+    // console.log(previousActiveChar)
+    // console.log('charStat:', charStat)
+    setCheckTypeState(produce(checkTypeState, (draft) => {
+      const nextActiveCharIndex = activeCharIndex + 1
+      draft.charStatus[activeWordIndex][0].splice(activeCharIndex, 1, 'correctChar')
+      draft.charStatus[activeWordIndex][0].splice(nextActiveCharIndex, 1, 'activeChar')
+    }))
+  }
+
   const contextData = {
     checkTyped: checkTypeState,
-    initializeCheckType
+    initializeCheckType,
+    updateWordStatus,
+    updateCharStatus
   }
 
   return <checkTypedContext.Provider value={contextData}>{children}</checkTypedContext.Provider>

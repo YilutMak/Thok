@@ -1,2 +1,26 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~react-toastify/dist/ReactToastify";
+
+
+#activeLetter{
+  border-right-style: solid;
+  animation-name: blinking;
+    animation-duration: 1s;
+    animation-iteration-count: 100;
+}
+@keyframes blinking {
+  50% {
+    border-color: #00000000;
+  }
+}
+
+#correctLetter{
+color: green !important;
+}
+
+#incorrectLetter{
+color: red;
+}
+
+#inActiveLetter{
+}
