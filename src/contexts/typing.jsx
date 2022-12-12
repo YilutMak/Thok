@@ -1,5 +1,5 @@
 import React, { useState, createContext, useContext } from 'react'
-// import produce from 'immer'
+import produce from 'immer'
 
 const typingContext = createContext()
 
@@ -11,14 +11,16 @@ export function TypingProvider({ children }) {
 
   const typing = (key) => {
     const characterPush = (char) => {
-      typedPassage.typed.push(char)
+      setTypeState(produce(typeState, (draft) => {
+        draft.typed.push(char)
+      }))
     }
     switch (key) {
       case 'Tab':
-        typedPassage.typed.splice(0, typedPassage.typed.length)
+        characterPush('tab')
         break
       case 'Backspace':
-        typedPassage.typed.pop()
+        characterPush('backspace')
         break
       case ' ':
         characterPush(' ')
@@ -304,9 +306,6 @@ export function TypingProvider({ children }) {
         console.log('invalid key:', key)
         break
     }
-    setTypeState({
-      typed: typedPassage.typed
-    })
   }
 
   const contextData = {

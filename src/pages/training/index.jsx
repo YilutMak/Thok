@@ -2,13 +2,20 @@ import { useEffect } from 'react'
 import { useGenPhrase } from '@/contexts/genPhrase'
 import { useTyping } from '@/contexts/typing'
 import { useCheckTyped } from '@/contexts/checkTyped'
+import CheckingType from '@/hooks/checkTypedStatus'
 
 export default function Training() {
   const {
+    checkTyped,
+    initializeSentence,
+    letterStyle
+  } = CheckingType()
+
+  const {
     passage: { phrase },
-    genPhraseTen
-    // genPhraseTwentyFive,
-    // genPhraseFifty,
+    genPhraseLength: { phraseLength },
+    genPhrase,
+    setWordCount
   } = useGenPhrase()
 
   const {
@@ -19,36 +26,12 @@ export default function Training() {
   const {
     checkTyped: {
       wordStatus,
-      charStatus },
-    initializeCheckType,
-    updateWordStatus,
-    updateCharStatus
-
+      charStatus }
   } = useCheckTyped()
 
   useEffect(() => {
-    genPhraseTen()
+    genPhrase()
   }, [])
-
-  const checkTyped = () => {
-    if (charStatus.length > 0) {
-      // console.log('wordStatus:', wordStatus)
-      // console.log('charStatus:', charStatus)
-      const activeWordStat = (stat) => stat === 'activeWord'
-      const activeCharStat = (stat) => stat === 'activeChar'
-      // console.log('active word:', wordStatus.findIndex((activeWordStat)))
-      const activeWordIndex = wordStatus.findIndex((activeWordStat))
-      const activeCharIndex = charStatus[activeWordIndex][0].findIndex((activeCharStat))
-      console.log(activeCharIndex)
-      const activePhraseChar = phrase[activeWordIndex][0][activeCharIndex]
-      const lastTypedChar = typed[typed.length - 1]
-      // console.log('typed:', lastTypedChar, 'active char:', activePhraseChar)
-      if (lastTypedChar === activePhraseChar) {
-        console.log('correct')
-        updateCharStatus(activeWordIndex, activeCharIndex, wordStatus, charStatus)
-      }
-    }
-  }
 
   const keyDownHandler = (e) => {
     e.preventDefault()
@@ -57,48 +40,28 @@ export default function Training() {
   }
 
   useEffect(() => {
-    if (phrase.length > 0) {
-      initializeCheckType(phrase)
-    }
-  }, [phrase])
-
-  useEffect(() => {
     document.addEventListener('keydown', keyDownHandler)
   }, [])
 
-  checkTyped()
-
-  const letterStyle = (i, n) => {
-    if (charStatus.length > 0) {
-      // console.log('letter:', charStatus, i, n)
-      if (charStatus[i][0][n] === 'activeChar') {
-        return 'activeLetter'
-      }
-      if (charStatus[i][0][n] === 'inactiveChar') {
-        return 'inActiveLetter'
-      }
-      if (charStatus[i][0][n] === 'correctChar') {
-        return 'correctLetter'
-      }
-      if (charStatus[i][0][n] === 'incorrectChar') {
-        return 'incorrectLetter'
-      }
-    }
-    return null
-  }
+  useEffect(() => {
+    checkTyped()
+  }, [typed])
 
   if (!phrase) return <div>Loading...</div>
 
   if (charStatus.length > 0) {
-    console.log('charStatus:', charStatus[0][0])
+    // console.log('charStatus:', charStatus)
   }
   // console.log('phrase:', phrase)
   // console.log('wordStatus:', wordStatus)
-
-  console.log('typed:', typed)
+  // console.log('typed:', typed)
 
   return (
-    <div className="d-flex">{
+    <>
+      <button type="button" onClick={() => setWordCount(10)}>10 word</button>
+      <button type="button" onClick={() => setWordCount(25)}>25 word</button>
+      <button type="button" onClick={() => setWordCount(50)}>50 word</button>
+      <div className="d-flex">{
       phrase.map((word, i) => (
         <div className="d-flex" style={{ margin: '5px' }} key={`${i}.${word}`}>
           {
@@ -109,5 +72,7 @@ export default function Training() {
         </div>
       ))
     }</div>
+
+    </>
   )
 }

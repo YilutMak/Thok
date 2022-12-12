@@ -5,36 +5,38 @@ import produce from 'immer'
 const genPhraseContext = createContext()
 
 const initialPhrase = {
-  wordStatus: [],
-  phrase: [],
-  charStatus: []
+  phrase: []
+}
+
+const initialGenPhrase = {
+  phraseLength: 10
 }
 
 export function GenPhraseProvider({ children }) {
   const [phraseState, setPhraseState] = useState(initialPhrase)
+  const [genPhraseState, setGenPhraseState] = useState(initialGenPhrase)
 
-  const genPhraseTen = async () => {
-    const randomTen = createPhrase(10)
+  const genPhrase = async () => {
     setPhraseState({
-      wordStatus: randomTen.map(() => ('inactive')),
-      phrase: randomTen,
-      charStatus: randomTen.map((word) => (word[0].map(() => 'na')))
+      phrase: createPhrase(genPhraseState.phraseLength)
+    })
+    console.log('phrase:', phraseState)
+  }
+
+  const setWordCount = (count) => {
+    setGenPhraseState({
+      phraseLength: count
+    })
+    setPhraseState({
+      phrase: createPhrase(count)
     })
   }
 
-  const genPhraseTwentyFive = async () => setPhraseState({
-    phrase: createPhrase(25)
-  })
-
-  const genPhraseFifty = async () => setPhraseState({
-    phrase: createPhrase(50)
-  })
-
   const contextData = {
     passage: phraseState,
-    genPhraseTen,
-    genPhraseTwentyFive,
-    genPhraseFifty
+    genPhraseLength: genPhraseState,
+    genPhrase,
+    setWordCount
   }
 
   return <genPhraseContext.Provider value={contextData}>{children}</genPhraseContext.Provider>

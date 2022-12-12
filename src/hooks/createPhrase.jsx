@@ -19,7 +19,7 @@ export default function createPhrase(wordLength) {
     // ['nonActive']
   ])
 
-  // console.log(randomSplitWords)
+  // console.log('random gen:', randomSplitWords)
 
   return randomSplitWords
 }
