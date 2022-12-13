@@ -19,9 +19,25 @@ model User {
   trials       Trials[]
   exp          Int
   lv           Int
-  borders      String
-  colors       String
+  outline      String
+  fill         String
+  borders      Borders[]
+  colors       Colors[]
   trainingPTs  Int
+}
+
+model Borders {
+  id     Int    @id @default(autoincrement())
+  user   User?  @relation(fields: [userId], references: [id])
+  userId Int?
+  color  String
+}
+
+model Colors {
+  id     Int    @id @default(autoincrement())
+  user   User?  @relation(fields: [userId], references: [id])
+  userId Int?
+  color  String
 }
 
 model Training {

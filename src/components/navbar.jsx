@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
-import NavDropdown from 'react-bootstrap/NavDropdown'
+import Login from '@/components/login-btn'
 
 function LayoutsNavbar() {
   // console.log(currentUser)
@@ -16,6 +16,8 @@ function LayoutsNavbar() {
           <Nav className="me-auto">
             <Nav.Link href="/training">Training</Nav.Link>
             <Nav.Link href="/trials">Trials</Nav.Link>
+            <Nav.Link href="/auth/login">Login</Nav.Link>
+            <Nav.Link href="/auth/signup">Signup</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

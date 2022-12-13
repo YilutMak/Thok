@@ -9,34 +9,55 @@ const initialPhrase = {
 }
 
 const initialGenPhrase = {
-  phraseLength: 10
+  phraseLength: 10,
+  phraseNumber: false,
+  phrasePunctuation: false
 }
 
 export function GenPhraseProvider({ children }) {
   const [phraseState, setPhraseState] = useState(initialPhrase)
   const [genPhraseState, setGenPhraseState] = useState(initialGenPhrase)
 
-  const genPhrase = async () => {
+  const newPhrase = async (length, number, punc) => {
+    // console.log('genPhraseState:', genPhraseState)
     setPhraseState({
-      phrase: createPhrase(genPhraseState.phraseLength)
+      phrase: createPhrase(length || genPhraseState.phraseLength, number, punc)
     })
-    console.log('phrase:', phraseState)
+    // console.log('phrase:', phraseState)
   }
 
   const setWordCount = (count) => {
-    setGenPhraseState({
-      phraseLength: count
-    })
-    setPhraseState({
-      phrase: createPhrase(count)
-    })
+    setGenPhraseState(produce(genPhraseState, (draft) => {
+      draft.phraseLength = count
+    }))
+    newPhrase(count, genPhraseState.phraseNumber, genPhraseState.phrasePunctuation)
+  }
+
+  const setPhraseNumber = async (boolean) => {
+    setGenPhraseState(produce(genPhraseState, (draft) => {
+      draft.phraseNumber = !boolean
+    }))
+    console.log('number:', !boolean)
+
+    newPhrase(false, !boolean, genPhraseState.phrasePunctuation)
+  }
+
+  const setPhrasePunctuation = (boolean) => {
+    setGenPhraseState(produce(genPhraseState, (draft) => {
+      draft.phrasePunctuation = !boolean
+    }))
+    console.log('punctuation:', !boolean)
+
+    newPhrase(false, genPhraseState.phraseNumber, !boolean)
   }
 
   const contextData = {
     passage: phraseState,
     genPhraseLength: genPhraseState,
-    genPhrase,
-    setWordCount
+    setWordCount,
+    setPhraseNumber,
+    setPhrasePunctuation,
+    newPhrase
   }
 
   return <genPhraseContext.Provider value={contextData}>{children}</genPhraseContext.Provider>

@@ -10,6 +10,7 @@ import { CheckTypedProvider } from '@/contexts/checkTyped'
 
 function MyApp({ Component, pageProps }) {
   return (
+
     <GenPhraseProvider>
       <TypingProvider>
         <CheckTypedProvider>
@@ -29,6 +30,7 @@ function MyApp({ Component, pageProps }) {
         </CheckTypedProvider>
       </TypingProvider>
     </GenPhraseProvider>
+
   )
 }
 

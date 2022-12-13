@@ -1,4 +1,4 @@
-import handleErrors from '../../_helpers/handle-errors.js'
+import handleErrors from '@/controllers/_helpers/handleErrors'
 
 const controllersApiAuth = async (req, res) => {
   try {

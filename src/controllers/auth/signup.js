@@ -1,9 +1,9 @@
 import yup from 'yup'
 import bcrypt from 'bcrypt'
 import _ from 'lodash'
-
-import prisma from '../../_helpers/prisma.js'
-import handleErrors from '../../_helpers/handle-errors.js'
+import handleErrors from '@/controllers/_helpers/handleErrors'
+import nc from '@/controllers/_helpers/nc'
+import prisma from '@/controllers/_helpers/prisma'
 
 const signupSchema = yup.object({
   email: yup.string().email().required().test({
@@ -52,4 +52,5 @@ const controllersApiAuthSignup = async (req, res) => {
   }
 }
 
-export default controllersApiAuthSignup
+export default nc()
+  .use(controllersApiAuthSignup)

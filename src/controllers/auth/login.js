@@ -1,7 +1,8 @@
 import yup from 'yup'
-
-import handleErrors from '@/controllers/helpers/handle-errors.js'
-import passport from '@/controllers/middlewares/passport.js'
+import nc from '@/controllers/_helpers/nc'
+// import prisma from '@/controllers/_helpers/prisma'
+import handleErrors from '@/controllers/_helpers/handleErrors'
+import passport from '@/controllers/_middlewares/passport'
 
 const loginSchema = yup.object({
   email: yup.string().email().required(),
@@ -30,4 +31,5 @@ const controllersApiAuthLogin = async (req, res, next) => {
   }
 }
 
-export default controllersApiAuthLogin
+export default nc()
+  .use(controllersApiAuthLogin)

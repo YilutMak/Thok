@@ -6,8 +6,12 @@ import { useCheckTyped } from '@/contexts/checkTyped'
 export default function CheckingType() {
   const {
     passage: { phrase },
-    genPhraseLength: { phraseLength },
-    genPhrase
+    genPhraseLength: {
+      phraseLength,
+      phraseNumber,
+      phrasePunctuation
+    },
+    newPhrase
   } = useGenPhrase()
 
   const {
@@ -71,13 +75,13 @@ export default function CheckingType() {
         switch (phraseLength) {
           case 10:
             console.log('gen 10')
-            genPhrase(10)
+            newPhrase(phraseLength, phraseNumber, phrasePunctuation)
             break
           case 25:
-            genPhrase(25)
+            newPhrase(phraseLength, phraseNumber, phrasePunctuation)
             break
           case 50:
-            genPhrase(50)
+            newPhrase(phraseLength, phraseNumber, phrasePunctuation)
             break
           default:
             console.log('error')
