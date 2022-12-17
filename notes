@@ -274,3 +274,15 @@ const validKeys = ' ' || '!' || '"' || '#' || '$' || '&' || '(' || ')' || '*' ||
 
 
         // const modifiers = 'Backspace' || 'Shift' || 'Enter' || 'CapsLock' || 'Tab' || 'Control' || 'Meta' || 'Alt' || 'F1' || 'F2' || 'F3' || 'F4' || 'F5' || 'F6' || 'F7' || 'F8' || 'F9' || 'F10' || 'F11' || 'F12' || 'ScrollLock' || 'Pause' || 'Insert' || 'Delete' || 'Home' || 'End' || 'ArrowLeft' || 'ArrowRight' || 'ArrowUp' || 'ArrowDown' || 'PageUP' || 'PageDown' || 'Escape'
+
+
+
+
+
+  Training      Training[]
+  Trials        Trials[]
+  exp           Int
+  trainingPTs   Int
+  outline       String
+  fill          String
+  Colors        Colors[]

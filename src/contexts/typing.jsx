@@ -4,7 +4,6 @@ import produce from 'immer'
 const typingContext = createContext()
 
 const initialTyping = { typed: [] }
-const typedPassage = { typed: [] }
 
 export function TypingProvider({ children }) {
   const [typeState, setTypeState] = useState(initialTyping)

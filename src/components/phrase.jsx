@@ -3,12 +3,17 @@ import { useGenPhrase } from '@/contexts/genPhrase'
 import { useTyping } from '@/contexts/typing'
 import { useCheckTyped } from '@/contexts/checkTyped'
 import CheckingType from '@/hooks/checkTypedStatus'
+import Timer from '@/hooks/timer'
 
 export default function Phrase() {
   const {
     checkTyped,
     letterStyle
   } = CheckingType()
+
+  const {
+    timerMount
+  } = Timer()
 
   const {
     passage: { phrase },
@@ -44,6 +49,10 @@ export default function Phrase() {
   useEffect(() => {
     checkTyped()
   }, [typed])
+
+  useEffect(() => {
+    timerMount()
+  }, [charStatus])
 
   if (!phrase) return <div>Loading...</div>
 

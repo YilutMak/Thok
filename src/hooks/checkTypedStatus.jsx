@@ -5,7 +5,7 @@ import { useCheckTyped } from '@/contexts/checkTyped'
 
 export default function CheckingType() {
   const {
-    passage: { phrase },
+    passage: { phrase, joinedPhrase },
     genPhraseLength: {
       phraseLength,
       phraseNumber,
@@ -22,6 +22,13 @@ export default function CheckingType() {
     checkTyped: {
       wordStatus,
       charStatus },
+    errorsWords: {
+      errors
+    },
+    typingAccuracy: {
+      acc,
+      totalChars
+    },
     initializeCheckType,
     updateWordStatus,
     updateCharCorrect,
@@ -29,12 +36,20 @@ export default function CheckingType() {
     updateCharWrong,
     updateLastCharWrong,
     updateCharBack,
-    updateLastCharBack
+    updateLastCharBack,
+    updateError,
+    updateAcc,
+    updateCharCount
   } = useCheckTyped()
 
   const initializeSentence = () => {
     if (phrase.length > 0) {
       initializeCheckType(phrase)
+      const joinedWords = joinedPhrase.join(' ')
+      const wordsArray = joinedWords.split(' ')
+      const phraseCharacters = wordsArray.join('')
+      const charCount = phraseCharacters.length
+      updateCharCount(charCount)
     }
   }
 
@@ -54,6 +69,9 @@ export default function CheckingType() {
       const activeCharFirst = charStatus[activeWordIndex][0][0]
       const activePhraseChar = phrase[activeWordIndex][0][activeCharIndex]
       const lastTypedChar = typed[0]
+
+      // console.log(lastWord)
+      // console.log(lastWordChar)
       // console.log(activeCharIndex)
       // console.log('lastTypedChar:', lastTypedChar, 'active char:', activePhraseChar)
       const correctChars = charStatus[activeWordIndex][0].filter((char) => char === 'correctChar').length
@@ -62,19 +80,19 @@ export default function CheckingType() {
 
       // correct word
       if (lastTypedChar === ' ' && activeWordLength === correctChars) {
-        console.log('next word')
-        console.log('activeWordIndex:', activeWordIndex, 'phrase length:', wordStatus.length)
+        // console.log('next word')
+        // console.log('activeWordIndex:', activeWordIndex, 'phrase length:', wordStatus.length)
         if (activeWordIndex !== wordStatus.length - 1) {
           updateWordStatus(activeWordIndex, wordStatus, charStatus)
         }
       }
 
-      // new phrase
+      // tab new phrase
       if (lastTypedChar === 'tab') {
-        console.log('phraseLength', phraseLength)
+        // console.log('phraseLength', phraseLength)
         switch (phraseLength) {
           case 10:
-            console.log('gen 10')
+            // console.log('gen 10')
             newPhrase(phraseLength, phraseNumber, phrasePunctuation)
             break
           case 25:
@@ -91,8 +109,8 @@ export default function CheckingType() {
 
       // backspace
       if (lastTypedChar === 'backspace' && activeCharFirst !== 'activeChar') {
-        console.log('backspace')
-        console.log('activeCharIndex:', activeCharIndex, 'word length:', phrase[activeWordIndex][0].length)
+        // console.log('backspace')
+        // console.log('activeCharIndex:', activeCharIndex, 'word length:', phrase[activeWordIndex][0].length)
         if (activeCharIndex !== 0 && activeCharIndex !== -1) {
           updateCharBack(activeWordIndex, activeCharIndex)
         }
@@ -106,19 +124,37 @@ export default function CheckingType() {
       // console.log('activeCharIndex:', activeCharIndex, 'word length:', phrase[activeWordIndex][0].length)
         if (activeCharIndex !== -1) {
           if (activeCharIndex < phrase[activeWordIndex][0].length - 1) {
-            console.log('incorrect')
+            // console.log('incorrect')
+            // console.log('lastTypedChar:', lastTypedChar)
             updateCharWrong(activeWordIndex, activeCharIndex)
+            updateError(lastTypedChar)
+            const errorsCount = errors.length + 1
+            const totalCharacter = totalChars || 0
+            console.log('totalChars:', totalChars)
+            console.log('errorsCount:', errorsCount)
+            const accPercentage = 1 - (errorsCount / (totalCharacter + errorsCount + 1)).toFixed(2)
+            console.log('accPercentage:', accPercentage)
+            updateAcc(accPercentage)
           }
           if (activeCharIndex === phrase[activeWordIndex][0].length - 1) {
-            console.log('incorrect')
+            // console.log('incorrect')
+            // console.log('lastTypedChar:', lastTypedChar)
             updateLastCharWrong(activeWordIndex, activeCharIndex)
+            updateError(lastTypedChar)
+            const errorsCount = errors.length + 1
+            const totalCharacter = totalChars || 0
+            console.log('totalChars:', totalChars)
+            console.log('errorsCount:', errorsCount)
+            const accPercentage = 1 - (errorsCount / (totalCharacter + errorsCount + 1)).toFixed(2)
+            console.log('accPercentage:', accPercentage)
+            updateAcc(accPercentage)
           }
         }
       }
 
       // correct
       if (lastTypedChar === activePhraseChar) {
-        console.log('correct')
+        // console.log('correct')
         // console.log('activeCharIndex:', activeCharIndex, 'word length:', phrase[activeWordIndex][0].length)
         if (activeCharIndex !== -1) {
           if (activeCharIndex < phrase[activeWordIndex][0].length - 1) {

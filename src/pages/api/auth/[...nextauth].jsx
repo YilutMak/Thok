@@ -1,7 +1,6 @@
 import NextAuth from 'next-auth'
 import GitHubProvider from 'next-auth/providers/github'
 import GoogleProvider from 'next-auth/providers/google'
-import FacebookProvider from 'next-auth/providers/facebook'
 import { PrismaAdapter } from '@next-auth/prisma-adapter'
 
 import prisma from '@/controllers/_helpers/prisma'

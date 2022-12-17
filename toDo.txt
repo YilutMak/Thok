@@ -1,7 +1,6 @@
 To do:
-  1. next auth login
+
   2. set up backend api
-  3. start timer for typing and end
   4. add hp bar
   5. add exp bar
   6. add trails
@@ -10,3 +9,9 @@ To do:
   9. add leaderboard
   10. add typing test on homepage
   11. complete styling
+
+
+
+
+  1. next auth login  
+  3. start timer for typing and end

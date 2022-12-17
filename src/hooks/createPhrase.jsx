@@ -1,5 +1,5 @@
-import wordList from '@/library/words.json'
-import punc from '@/library/punctuation.json'
+import wordList from '@/wordsDatabase/words.json'
+import punc from '@/wordsDatabase/punctuation.json'
 
 export default function createPhrase(wordLength, phraseNumber, phrasePunctuation) {
   const randomWords = []

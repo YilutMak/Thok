@@ -5,7 +5,8 @@ import produce from 'immer'
 const genPhraseContext = createContext()
 
 const initialPhrase = {
-  phrase: []
+  phrase: [],
+  joinedPhrase: []
 }
 
 const initialGenPhrase = {
@@ -20,9 +21,19 @@ export function GenPhraseProvider({ children }) {
 
   const newPhrase = async (length, number, punc) => {
     // console.log('genPhraseState:', genPhraseState)
-    setPhraseState({
-      phrase: createPhrase(length || genPhraseState.phraseLength, number, punc)
-    })
+    const RandomPhraseGen = createPhrase(length || genPhraseState.phraseLength, number, punc)
+    const RandomPhraseLength = RandomPhraseGen.length - 1
+    const joinedWords = []
+    for (let index = 0; index < RandomPhraseLength; index += 1) {
+      joinedWords.push(RandomPhraseGen[index][0].join(''))
+    }
+    const completePhrase = joinedWords.join(' ')
+    // console.log(completePhrase)
+
+    setPhraseState(produce(genPhraseState, (draft) => {
+      draft.phrase = RandomPhraseGen
+      draft.joinedPhrase = [completePhrase]
+    }))
     // console.log('phrase:', phraseState)
   }
 
