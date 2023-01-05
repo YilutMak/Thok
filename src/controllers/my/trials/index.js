@@ -4,19 +4,23 @@ import prisma from '@/controllers/_helpers/prisma'
 
 const controllersApiMyTrialsIndex = async (req, res) => {
   try {
-    const { session: { user: { id: userId } } } = req
+    const {
+      query: {
+        userId
+      }
+    } = req
 
     // Common Where Query
     const where = {
       userId
     }
 
-    const foundMyStocks = await prisma.stocks.findMany({
+    const foundMyTrials = await prisma.trials.findMany({
       where
     })
 
     return res.status(200).json({
-      stocks: foundMyStocks
+      trials: foundMyTrials
     })
   } catch (err) {
     return handleErrors(res, err)

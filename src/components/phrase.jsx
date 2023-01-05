@@ -32,10 +32,6 @@ export default function Phrase() {
       charStatus }
   } = useCheckTyped()
 
-  useEffect(() => {
-    newPhrase(10, false, false)
-  }, [])
-
   const keyDownHandler = (e) => {
     e.preventDefault()
     if (e.repeat) return
@@ -66,7 +62,7 @@ export default function Phrase() {
   // console.log('phrasePunctuation:', phrasePunctuation)
 
   return (
-    <div style={{ margin: '100px', height: '300px' }}>
+    <div style={{ height: '300px' }}>
       <div className="d-flex flex-wrap justify-content-center">{
         phrase.map((word, i) => (
           <div className="d-flex" style={{ margin: '5px' }} key={`${i}.${word}`}>

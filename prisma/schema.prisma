@@ -21,23 +21,25 @@ model User {
   exp           Exp[]
   trainingPts   TrainingPTs[]
   Custom        Custom[]
-  Colors        Colors[]
   Training      Training[]
   Trials        Trials[]
+  Color10       Color10?
+  Color25       Color25?
+  Color50       Color50?
 }
 
 model Exp {
-  id     Int     @id @default(autoincrement())
+  id     Int    @id @default(autoincrement())
   exp    Int
-  user   User?   @relation(fields: [userId], references: [id])
-  userId String?
+  user   User   @relation(fields: [userId], references: [id])
+  userId String @unique
 }
 
 model TrainingPTs {
   id          Int     @id @default(autoincrement())
   trainingPts Int
   user        User?   @relation(fields: [userId], references: [id])
-  userId      String?
+  userId      String? @unique
 }
 
 model Custom {
@@ -45,14 +47,28 @@ model Custom {
   outline String
   fill    String
   user    User?   @relation(fields: [userId], references: [id])
-  userId  String?
+  userId  String? @unique
 }
 
-model Colors {
+model Color10 {
   id     Int     @id @default(autoincrement())
-  color  String
+  color  Int
   user   User?   @relation(fields: [userId], references: [id])
-  userId String?
+  userId String? @unique
+}
+
+model Color25 {
+  id     Int     @id @default(autoincrement())
+  color  Int
+  user   User?   @relation(fields: [userId], references: [id])
+  userId String? @unique
+}
+
+model Color50 {
+  id     Int     @id @default(autoincrement())
+  color  Int
+  user   User?   @relation(fields: [userId], references: [id])
+  userId String? @unique
 }
 
 model Training {

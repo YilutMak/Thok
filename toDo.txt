@@ -1,9 +1,9 @@
 To do:
 
-  2. set up backend api
+
   4. add hp bar
   5. add exp bar
-  6. add trails
+
   7. add training and trials reward
   8. add dashboard
   9. add leaderboard
@@ -13,5 +13,7 @@ To do:
 
 
 
-  1. next auth login  
+  1. next auth login
   3. start timer for typing and end
+    2. set up backend api
+      6. add trails

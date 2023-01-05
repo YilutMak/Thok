@@ -12,7 +12,8 @@ const initialCheckType = {
 const intialTimer = {
   running: false,
   completedPhrase: false,
-  wordTimestamps: []
+  wordTimestamps: [],
+  wordsWPM: []
 }
 
 const initialError = {
@@ -29,16 +30,64 @@ const initialWpm = {
   wpm: 0
 }
 
+const initialLost = {
+  lostAllHp: false
+}
+
+const initialPreviousStat = {
+  prevPhrase: null,
+  prevPhraseLength: 0,
+  haveNum: false,
+  havePunc: false,
+  prevWpm: 0,
+  prevTime: 0,
+  prevErrors: [],
+  prevChars: 0,
+  prevAcc: 0,
+  prevTimestamps: []
+}
+
 export function CheckTypedProvider({ children }) {
   const [checkTypeState, setCheckTypeState] = useState(initialCheckType)
   const [timerState, setTimerState] = useState(intialTimer)
   const [errorState, setErrorState] = useState(initialError)
   const [accuracyState, setAccuracyState] = useState(initialAccuracy)
   const [wpmState, setWpmState] = useState(initialWpm)
+  const [lostState, setLostState] = useState(initialLost)
+  const [previousState, setPreviousState] = useState(initialPreviousStat)
 
   const {
     passage: { phrase }
   } = useGenPhrase()
+
+  const logPreviousStat = (data) => {
+    const {
+      prevPhrase,
+      prevPhraseLength,
+      haveNum,
+      havePunc,
+      prevWpm,
+      prevTime,
+      prevErrors,
+      prevChars,
+      prevAcc,
+      prevTimestamps
+    } = data
+
+    setPreviousState(produce(previousState, (draft) => {
+      draft.prevPhrase = prevPhrase
+      draft.prevPhraseLength = prevPhraseLength
+      draft.haveNum = haveNum
+      draft.havePunc = havePunc
+      draft.prevWpm = prevWpm
+      draft.prevTime = prevTime
+      draft.prevErrors = prevErrors
+      draft.prevChars = prevChars
+      draft.prevAcc = prevAcc
+      draft.prevTimestamps = prevTimestamps
+    }))
+    // console.log(data)
+  }
 
   const timerRun = () => {
     setTimerState(produce(timerState, (draft) => {
@@ -88,6 +137,12 @@ export function CheckTypedProvider({ children }) {
       wordStatus: wordInitializeStatus(),
       charStatus: charInitializeStatus()
     })
+  }
+
+  const updateLost = (boolean) => {
+    setLostState(produce(lostState, (draft) => {
+      draft.lostAllHp = boolean
+    }))
   }
 
   const updateCharBack = (activeWordIndex, activeCharIndex) => {
@@ -145,7 +200,7 @@ export function CheckTypedProvider({ children }) {
     }))
   }
 
-  const updateWordStatus = (activeWordIndex, wordStatus, charStatus) => {
+  const updateWordStatus = (activeWordIndex) => {
     // console.log(activeWordIndex, wordStatus, charStatus)
     // console.log(charStatus[activeWordIndex + 1][0][0])
     setCheckTypeState(produce(checkTypeState, (draft) => {
@@ -189,6 +244,8 @@ export function CheckTypedProvider({ children }) {
     errorsWords: errorState,
     typingAccuracy: accuracyState,
     typingSpeed: wpmState,
+    lostHP: lostState,
+    prevStats: previousState,
     initializeCheckType,
     updateWordStatus,
     updateCharCorrect,
@@ -202,7 +259,9 @@ export function CheckTypedProvider({ children }) {
     updateError,
     updateWpm,
     updateCharCount,
-    updateAcc
+    updateAcc,
+    updateLost,
+    logPreviousStat
   }
 
   return <checkTypedContext.Provider value={contextData}>{children}</checkTypedContext.Provider>

@@ -2,6 +2,10 @@
 @import "~react-toastify/dist/ReactToastify";
 
 
+html{
+  font-family: 'Arial' !important
+}
+
 #activeLetter{
   border-left-style: solid;
   animation-name: blinking;
@@ -85,4 +89,81 @@
 }
 
 #inActiveLetter{
+}
+
+#trials10 {
+    background-image: url(../assets/trials10.png);
+      background-size: cover;
+}
+
+#trials25 {
+  background-image: url(../assets/trials25.png);
+  background-size: cover;
+}
+
+#trials50 {
+  background-image: url(../assets/trials50.png);
+  background-size: cover;
+}
+
+#trials10battle {
+  background-image: url(../assets/trials10battle.png);
+  background-size: cover;
+}
+#trials25battle {
+  background-image: url(../assets/trials25battle.png);
+  background-size: cover;
+}
+#trials50battle {
+  background-image: url(../assets/trials50battle.png);
+  background-size: cover;
+}
+
+.progress-bar{
+  background-color: #b6d3ff !important
+}
+
+#navAvatar{
+    background-image: url(../assets/face.png) !important;
+    background-size: cover !important;
+}
+
+#dashboardAvatar{
+    background-image: url(../assets/face.png) !important;
+    background-size: cover !important;
+  }
+
+#midAvatar{
+  background-image: url(../assets/face.png) !important;
+  background-size: cover !important;
+}
+
+#avatar {
+  background-image: url(../assets/face.png) !important;
+  background-size: cover !important;
+}
+
+#avatarHurt {
+  background-image: url(../assets/hurtfacefront.png) !important;
+  background-size: cover !important;
+  animation: shake 0.5s;
+  animation-iteration-count: 2;
+}
+
+
+#lostAvatar {
+  background-image: url(../assets/face.png) !important;
+  background-size: cover !important;
+}
+
+#smallAvatar {
+  background-image: url(../assets/battleface.png) !important;
+  background-size: cover !important;
+}
+
+#smallAvatarHurt {
+  background-image: url(../assets/hurtface.png) !important;
+  background-size: cover !important;
+  animation: shake 0.5s;
+  animation-iteration-count: 2;
 }

@@ -130,10 +130,10 @@ export default function CheckingType() {
             updateError(lastTypedChar)
             const errorsCount = errors.length + 1
             const totalCharacter = totalChars || 0
-            console.log('totalChars:', totalChars)
-            console.log('errorsCount:', errorsCount)
+            // console.log('totalChars:', totalChars)
+            // console.log('errorsCount:', errorsCount)
             const accPercentage = 1 - (errorsCount / (totalCharacter + errorsCount + 1)).toFixed(2)
-            console.log('accPercentage:', accPercentage)
+            // console.log('accPercentage:', accPercentage)
             updateAcc(accPercentage)
           }
           if (activeCharIndex === phrase[activeWordIndex][0].length - 1) {
@@ -143,10 +143,10 @@ export default function CheckingType() {
             updateError(lastTypedChar)
             const errorsCount = errors.length + 1
             const totalCharacter = totalChars || 0
-            console.log('totalChars:', totalChars)
-            console.log('errorsCount:', errorsCount)
+            // console.log('totalChars:', totalChars)
+            // console.log('errorsCount:', errorsCount)
             const accPercentage = 1 - (errorsCount / (totalCharacter + errorsCount + 1)).toFixed(2)
-            console.log('accPercentage:', accPercentage)
+            // console.log('accPercentage:', accPercentage)
             updateAcc(accPercentage)
           }
         }

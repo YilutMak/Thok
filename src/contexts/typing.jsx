@@ -11,7 +11,7 @@ export function TypingProvider({ children }) {
   const typing = (key) => {
     const characterPush = (char) => {
       setTypeState(produce(typeState, (draft) => {
-        draft.typed.push(char)
+        draft.typed = [char]
       }))
     }
     switch (key) {

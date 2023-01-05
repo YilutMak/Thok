@@ -1,9 +1,14 @@
 import axios from 'axios'
 import { renderErrors } from '@/contexts/_ultils'
+import { useUser } from '@/contexts/user'
 
 export default function useTrials() {
+  const {
+    setTrialsLog
+  } = useUser()
+
   const logTrials = async (data) => {
-    console.log('signup', data)
+    console.log('trials:', data)
     try {
       const resp = await axios({
         method: 'POST',
@@ -18,13 +23,18 @@ export default function useTrials() {
     }
   }
 
-  const getMyTrials = async () => {
+  const getMyTrials = async (data) => {
+    // console.log('my trials:', data)
     try {
       const resp = await axios({
         method: 'GET',
         // url: `${process.env.API_URL}/api/my/profile`
-        url: 'http://localhost:3000/api/my/profile'
+        url: 'http://localhost:3000/api/my/trials',
+        params: {
+          userId: data
+        }
       })
+      setTrialsLog(resp.data)
       return resp.data
     } catch (err) {
       renderErrors(err)
