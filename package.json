@@ -11,8 +11,8 @@
     "deploy": "npx dotenv -e .env.production.local -- npx prisma migrate deploy"
   },
   "engines" : {
-    "npm" : ">=8.0.0 <9.0.0",
-    "node" : ">=16.0.0 <17.0.0"
+    "npm" : "8.3.1",
+    "node" : "16.14.0"
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.3",
