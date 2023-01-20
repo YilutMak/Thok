@@ -8,7 +8,7 @@ export default function useColors() {
   } = useUser()
 
   const newColor = async (data) => {
-    console.log('color:', data)
+    // console.log('color:', data)
     try {
       const resp = await axios({
         method: 'POST',

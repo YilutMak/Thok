@@ -29,7 +29,7 @@ function HealthBar() {
 
   useEffect(() => {
     if (hpLeft <= 0) {
-      console.log('you died')
+      // console.log('you died')
       updateLost(true)
       push('/lost')
     }

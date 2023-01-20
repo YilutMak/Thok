@@ -8,7 +8,7 @@ export default function useTrials() {
   } = useUser()
 
   const logTrials = async (data) => {
-    console.log('trials:', data)
+    // console.log('trials:', data)
     try {
       const resp = await axios({
         method: 'POST',

@@ -59,7 +59,7 @@ export default function Training() {
     })
     data.splice(0, 1)
     data.splice(data.length - 1, 1, { name: `${data.length - 1}`, wpm: `${prevWpm}` })
-    console.log('data:', data)
+    // console.log('data:', data)
     return data
   }
 
@@ -71,8 +71,8 @@ export default function Training() {
   })
   yDomain.splice(0, 1)
   yDomain.splice(yDomain.length - 1, 1)
-  console.log('yDomain:', yDomain)
-  console.log('max yDomain:', Math.max(...yDomain))
+  // console.log('yDomain:', yDomain)
+  // console.log('max yDomain:', Math.max(...yDomain))
   // return Math.max(...yDomain)
   // }
 

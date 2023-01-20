@@ -97,7 +97,7 @@ export default function Training() {
   useEffect(() => {
     resetPhrase()
     if (session) {
-      console.log('completedPhrase:', completedPhrase)
+      // console.log('completedPhrase:', completedPhrase)
       // console.log(session.user.id)
       if (completedPhrase === true) {
         // console.log('phrase:', joinedPhrase, 'phraseNumber:', phraseNumber, 'phrasePunctuation:', phrasePunctuation, 'wpm:', wpm, 'time:', completeTime, 'errors:', errors, 'total char count', totalChars, 'acc:', acc)

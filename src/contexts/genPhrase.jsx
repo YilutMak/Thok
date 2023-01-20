@@ -48,7 +48,7 @@ export function GenPhraseProvider({ children }) {
     setGenPhraseState(produce(genPhraseState, (draft) => {
       draft.phraseNumber = !boolean
     }))
-    console.log('number:', !boolean)
+    // console.log('number:', !boolean)
 
     newPhrase(false, !boolean, genPhraseState.phrasePunctuation)
   }
@@ -57,7 +57,7 @@ export function GenPhraseProvider({ children }) {
     setGenPhraseState(produce(genPhraseState, (draft) => {
       draft.phrasePunctuation = !boolean
     }))
-    console.log('punctuation:', !boolean)
+    // console.log('punctuation:', !boolean)
 
     newPhrase(false, genPhraseState.phraseNumber, !boolean)
   }

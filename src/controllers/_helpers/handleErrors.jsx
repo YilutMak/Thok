@@ -15,7 +15,7 @@ const mapErrors = (err) => {
 }
 
 const handleErrors = (res, err) => {
-  console.log(err) // eslint-disable-line
+  // console.log(err) // eslint-disable-line
   switch (err.constructor.name) {
     case 'PrismaClientKnownRequestError':
       if (err.code === 'P2025') return res.status(404).json(err.meta.cause)

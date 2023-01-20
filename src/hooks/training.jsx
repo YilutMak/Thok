@@ -8,7 +8,7 @@ export default function useTraining() {
   } = useUser()
 
   const logTraining = async (data) => {
-    console.log('training', data)
+    // console.log('training', data)
     try {
       const resp = await axios({
         method: 'POST',

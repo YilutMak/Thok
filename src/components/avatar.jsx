@@ -43,7 +43,7 @@ function Avatar() {
     }
   }, [charStatus, wordStatus, phrase])
 
-  console.log('charStatus:', charStatus)
+  // console.log('charStatus:', charStatus)
 
   return <div id={avatarId} style={{ width: '300px', height: '300px', background: `${fill || '#6b6b6b'}`, borderRadius: '50%', border: `solid ${outline || 'gray'} 15px`, marginRight: '10px' }} />
 }

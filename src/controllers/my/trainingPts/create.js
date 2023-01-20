@@ -3,7 +3,7 @@ import nc from '@/controllers/_helpers/nc'
 import prisma from '@/controllers/_helpers/prisma'
 
 const controllersApiMyTrainingPtsCreate = async (req, res) => {
-  console.log('request:', req.body)
+  // console.log('request:', req.body)
 
   try {
     const {
@@ -28,7 +28,7 @@ const controllersApiMyTrainingPtsCreate = async (req, res) => {
 
     return res.status(201).json(newTrainingPts)
   } catch (err) {
-    console.error(err)
+    // console.error(err)
     return handleErrors(res, err)
   }
 }

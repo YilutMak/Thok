@@ -95,7 +95,7 @@ export default function Trials25() {
   useEffect(() => {
     resetPhrase()
     if (session) {
-      console.log(session.user)
+      // console.log(session.user)
       if (completedPhrase === true) {
         // console.log('phrase:', joinedPhrase, 'phraseNumber:', phraseNumber, 'phrasePunctuation:', phrasePunctuation, 'wpm:', wpm, 'time:', completeTime, 'errors:', errors, 'total char count', totalChars, 'acc:', acc)
         const trails25Log = {
@@ -110,7 +110,7 @@ export default function Trials25() {
           passage: joinedPhrase.join(),
           error: errors.join()
         }
-        console.log('trial 10 logged')
+        // console.log('trial 10 logged')
         logTrials(trails25Log)
 
         // log exp points
@@ -143,7 +143,7 @@ export default function Trials25() {
 
         if (wpm >= 40 && wpm <= 60) {
           if (color25 < 16) {
-            console.log('reward 16')
+            // console.log('reward 16')
             const hex = {
               userId: session.user.id,
               color: 16
@@ -153,7 +153,7 @@ export default function Trials25() {
         }
         if (wpm >= 60 && wpm <= 80) {
           if (color25 < 17) {
-            console.log('reward 17')
+            // console.log('reward 17')
             const hex = {
               userId: session.user.id,
               color: 17
@@ -163,7 +163,7 @@ export default function Trials25() {
         }
         if (wpm >= 80 && wpm <= 100) {
           if (color25 < 18) {
-            console.log('reward 18')
+            // console.log('reward 18')
             const hex = {
               userId: session.user.id,
               color: 18
@@ -173,7 +173,7 @@ export default function Trials25() {
         }
         if (wpm >= 100 && wpm <= 120) {
           if (color25 < 19) {
-            console.log('reward 19')
+            // console.log('reward 19')
             const hex = {
               userId: session.user.id,
               color: 19
@@ -183,7 +183,7 @@ export default function Trials25() {
         }
         if (wpm >= 120) {
           if (color25 < 20) {
-            console.log('reward 20')
+            // console.log('reward 20')
             const hex = {
               userId: session.user.id,
               color: 20
@@ -196,7 +196,7 @@ export default function Trials25() {
   }, [running])
 
   useEffect(() => {
-    console.log('color25:', color25)
+    // console.log('color25:', color25)
   }, [color25])
 
   useEffect(() => {

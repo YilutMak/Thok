@@ -5,8 +5,8 @@ export const fetcher = (url, query = {}) => axios.get(url, { params: query }).th
 
 export const handleErrors = (err) => {
   // Console Log for debugging purposes
-  console.log(err) // eslint-disable-line
-  console.log(err.response) // eslint-disable-line
+  // console.log(err) // eslint-disable-line
+  // console.log(err.response) // eslint-disable-line
 
   switch (err.response.status) {
     case 406: {

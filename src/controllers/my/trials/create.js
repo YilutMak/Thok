@@ -4,7 +4,7 @@ import nc from '@/controllers/_helpers/nc'
 import prisma from '@/controllers/_helpers/prisma'
 
 const controllersApiMyTrialsCreate = async (req, res) => {
-  console.log('request:', req.body)
+  // console.log('request:', req.body)
   try {
     const {
       body: {
@@ -36,7 +36,7 @@ const controllersApiMyTrialsCreate = async (req, res) => {
 
     return res.status(201).json(newTraining)
   } catch (err) {
-    console.error(err)
+    // console.error(err)
     return handleErrors(res, err)
   }
 }

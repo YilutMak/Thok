@@ -3,7 +3,7 @@ import nc from '@/controllers/_helpers/nc'
 import prisma from '@/controllers/_helpers/prisma'
 
 const controllersApiMyColor10Create = async (req, res) => {
-  console.log('request:', req.body)
+  // console.log('request:', req.body)
 
   try {
     const {

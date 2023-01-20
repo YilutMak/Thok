@@ -117,7 +117,7 @@ export default function SWRIndex() {
   // }, [borderSelected, colorSelected])
 
   useEffect(() => {
-    console.log('viewGraph:', viewGraph, 'viewWordCount:', viewWordCount)
+    // console.log('viewGraph:', viewGraph, 'viewWordCount:', viewWordCount)
   }, [borderSelected, colorSelected])
 
   useEffect(() => {
@@ -131,8 +131,8 @@ export default function SWRIndex() {
   }, [userId])
 
   useEffect(() => {
-    console.log('training10:', training10, 'training25:', training25, 'training50:', training50)
-    console.log('trials10:', trials10, 'trials25:', trials25, 'trials50:', trials50)
+    // console.log('training10:', training10, 'training25:', training25, 'training50:', training50)
+    // console.log('trials10:', trials10, 'trials25:', trials25, 'trials50:', trials50)
   }, [training10, training25, training50, trials10, trials25, trials50])
 
   const pieChartData10 = [
@@ -697,29 +697,29 @@ export default function SWRIndex() {
   }
 
   const setBorder = (border) => {
-    console.log('click:', border, 'setBorderSelected:', setBorderSelected)
+    // console.log('click:', border, 'setBorderSelected:', setBorderSelected)
     if (border !== borderSelected) {
       setBorderSelected(border)
     }
     if (border === borderSelected) {
-      console.log('set border back to 0')
+      // console.log('set border back to 0')
       setBorderSelected(0)
     }
   }
 
   const setColor = (color) => {
-    console.log('click:', color, 'setColorSelected:', setColorSelected)
+    // console.log('click:', color, 'setColorSelected:', setColorSelected)
     if (color !== colorSelected) {
       setColorSelected(color)
     }
     if (color === colorSelected) {
-      console.log('set Color back to 0')
+      // console.log('set Color back to 0')
       setColorSelected(0)
     }
   }
 
   const setNewCustom = (border, color) => {
-    console.log(border, color)
+    // console.log(border, color)
 
     const borderColor = () => {
       if (border === 1 && trainingPoints >= 100) {
@@ -810,7 +810,7 @@ export default function SWRIndex() {
       fill: fillColor()
     }
 
-    console.log('custom:', custom)
+    // console.log('custom:', custom)
     newCustom(custom)
   }
 
@@ -878,8 +878,8 @@ export default function SWRIndex() {
         if (training10.length > 0) {
           const wpmArray = training10.map((session) => session.wpm)
           const index = wpmArray.indexOf(Math.max(...wpmArray))
-          console.log('best session id:', wpmArray.indexOf(Math.max(...wpmArray)))
-          console.log('best session:', training10[index].wpm)
+          // console.log('best session id:', wpmArray.indexOf(Math.max(...wpmArray)))
+          // console.log('best session:', training10[index].wpm)
           sessionWpm = training10[index].wpm
           sessionTime = moment(training10[index].time).format('ss:SS')
           sessionError = training10[index].error
@@ -892,8 +892,8 @@ export default function SWRIndex() {
         if (training25.length > 0) {
           const wpmArray = training25.map((session) => session.wpm)
           const index = wpmArray.indexOf(Math.max(...wpmArray))
-          console.log('best session id:', wpmArray.indexOf(Math.max(...wpmArray)))
-          console.log('best session:', training25[index].wpm)
+          // console.log('best session id:', wpmArray.indexOf(Math.max(...wpmArray)))
+          // console.log('best session:', training25[index].wpm)
           sessionWpm = training25[index].wpm
           sessionTime = moment(training25[index].time).format('ss:SS')
           sessionError = training25[index].error
@@ -906,8 +906,8 @@ export default function SWRIndex() {
         if (training50.length > 0) {
           const wpmArray = training50.map((session) => session.wpm)
           const index = wpmArray.indexOf(Math.max(...wpmArray))
-          console.log('best session id:', wpmArray.indexOf(Math.max(...wpmArray)))
-          console.log('best session:', training50[index].wpm)
+          // console.log('best session id:', wpmArray.indexOf(Math.max(...wpmArray)))
+          // console.log('best session:', training50[index].wpm)
           sessionWpm = training50[index].wpm
           sessionTime = moment(training50[index].time).format('ss:SS')
           sessionError = training50[index].error
@@ -923,8 +923,8 @@ export default function SWRIndex() {
         if (trials10.length > 0) {
           const wpmArray = trials10.map((session) => session.wpm)
           const index = wpmArray.indexOf(Math.max(...wpmArray))
-          console.log('best session id:', wpmArray.indexOf(Math.max(...wpmArray)))
-          console.log('best session:', trials10[index].wpm)
+          // console.log('best session id:', wpmArray.indexOf(Math.max(...wpmArray)))
+          // console.log('best session:', trials10[index].wpm)
           sessionWpm = trials10[index].wpm
           sessionTime = moment(trials10[index].time).format('ss:SS')
           sessionError = trials10[index].error
@@ -937,8 +937,8 @@ export default function SWRIndex() {
         if (trials25.length > 0) {
           const wpmArray = trials25.map((session) => session.wpm)
           const index = wpmArray.indexOf(Math.max(...wpmArray))
-          console.log('best session id:', wpmArray.indexOf(Math.max(...wpmArray)))
-          console.log('best session:', trials25[index].wpm)
+          // console.log('best session id:', wpmArray.indexOf(Math.max(...wpmArray)))
+          // console.log('best session:', trials25[index].wpm)
           sessionWpm = trials25[index].wpm
           sessionTime = moment(trials25[index].time).format('ss:SS')
           sessionError = trials25[index].error
@@ -951,8 +951,8 @@ export default function SWRIndex() {
         if (trials50.length > 0) {
           const wpmArray = trials50.map((session) => session.wpm)
           const index = wpmArray.indexOf(Math.max(...wpmArray))
-          console.log('best session id:', wpmArray.indexOf(Math.max(...wpmArray)))
-          console.log('best session:', trials50[index].wpm)
+          // console.log('best session id:', wpmArray.indexOf(Math.max(...wpmArray)))
+          // console.log('best session:', trials50[index].wpm)
           sessionWpm = trials50[index].wpm
           sessionTime = moment(trials50[index].time).format('ss:SS')
           sessionError = trials50[index].error

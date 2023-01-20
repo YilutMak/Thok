@@ -118,7 +118,7 @@ export default function createPhrase(wordLength, phraseNumber, phrasePunctuation
 
   // ! both numbers and punctuation
   if (phraseStatus === 'all') {
-    console.log('wordLength:', wordLength)
+    // console.log('wordLength:', wordLength)
 
     for (let index = 0; index < wordLength; index += 1) {
       randomWords.push(wordList.words[getRandomInt(wordList.words.length)])

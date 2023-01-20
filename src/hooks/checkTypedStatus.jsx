@@ -102,7 +102,7 @@ export default function CheckingType() {
             newPhrase(phraseLength, phraseNumber, phrasePunctuation)
             break
           default:
-            console.log('error')
+            // console.log('error')
             break
         }
       }

@@ -178,7 +178,7 @@ export function UserProvider({ children }) {
   }
 
   const setCustom = async (data) => {
-    console.log('getcustom:', data)
+    // console.log('getcustom:', data)
 
     const outline = data?.outline || 'gray'
     const fill = data?.fill || '#6b6b6b'
@@ -190,7 +190,7 @@ export function UserProvider({ children }) {
   }
 
   const setColor10 = async (data) => {
-    console.log('setcolor10', data.color)
+    // console.log('setcolor10', data.color)
     setColor10State(produce(color10State, (draft) => {
       draft.color10 = data.color
     }))
@@ -242,7 +242,7 @@ export function UserProvider({ children }) {
   }
 
   const setTrainingLog = async (data) => {
-    console.log('traininglog data:', data.training)
+    // console.log('traininglog data:', data.training)
 
     const traininglog10 = []
     const traininglog25 = []

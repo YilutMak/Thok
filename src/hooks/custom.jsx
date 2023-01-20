@@ -8,7 +8,7 @@ export default function useCustom() {
   } = useUser()
 
   const newCustom = async (data) => {
-    console.log('color:', data)
+    // console.log('color:', data)
     try {
       const resp = await axios({
         method: 'POST',

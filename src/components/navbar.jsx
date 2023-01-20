@@ -92,7 +92,7 @@ function LayoutsNavbar() {
   }, [exp])
 
   useEffect(() => {
-    console.log('username:', username, 'userId:', userId, 'exp:', exp, 'level:', level, 'trainingPoints:', trainingPoints, 'outline:', outline, 'fill:', fill, 'color10:', color10, 'color25:', color25, 'color50:', color50)
+    // console.log('username:', username, 'userId:', userId, 'exp:', exp, 'level:', level, 'trainingPoints:', trainingPoints, 'outline:', outline, 'fill:', fill, 'color10:', color10, 'color25:', color25, 'color50:', color50)
   }, [exp, trainingPoints, outline, fill, color10, color25, color50])
 
   return (

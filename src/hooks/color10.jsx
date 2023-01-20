@@ -26,7 +26,7 @@ export default function useColor10() {
   }
 
   const getMyColor10 = async (data) => {
-    console.log('getcolor10:', data)
+    // console.log('getcolor10:', data)
     try {
       const resp = await axios({
         method: 'GET',
@@ -36,7 +36,7 @@ export default function useColor10() {
           userId: data
         }
       })
-      console.log(resp.data)
+      // console.log(resp.data)
       foundColor10(resp.data)
       return resp.data
     } catch (err) {

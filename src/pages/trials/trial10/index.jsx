@@ -95,7 +95,7 @@ export default function Trials10() {
   useEffect(() => {
     resetPhrase()
     if (session) {
-      console.log(session.user)
+      // console.log(session.user)
       if (completedPhrase === true) {
         // console.log('phrase:', joinedPhrase, 'phraseNumber:', phraseNumber, 'phrasePunctuation:', phrasePunctuation, 'wpm:', wpm, 'time:', completeTime, 'errors:', errors, 'total char count', totalChars, 'acc:', acc)
         const trails10Log = {
@@ -110,7 +110,7 @@ export default function Trials10() {
           passage: joinedPhrase.join(),
           error: errors.join()
         }
-        console.log('trial 10 logged')
+        // console.log('trial 10 logged')
         logTrials(trails10Log)
 
         // log exp points
@@ -143,7 +143,7 @@ export default function Trials10() {
 
         if (wpm >= 40 && wpm <= 60) {
           if (color10 < 11) {
-            console.log('reward 11')
+            // console.log('reward 11')
             const hex = {
               userId: session.user.id,
               color: 11
@@ -159,11 +159,11 @@ export default function Trials10() {
             }
             newColor10(hex)
           }
-          console.log('reward 12')
+          // console.log('reward 12')
         }
         if (wpm >= 80 && wpm <= 100) {
           if (color10 < 13) {
-            console.log('reward 13')
+            // console.log('reward 13')
             const hex = {
               userId: session.user.id,
               color: 13
@@ -173,7 +173,7 @@ export default function Trials10() {
         }
         if (wpm >= 100 && wpm <= 120) {
           if (color10 < 14) {
-            console.log('reward 14')
+            // console.log('reward 14')
             const hex = {
               userId: session.user.id,
               color: 14
@@ -183,7 +183,7 @@ export default function Trials10() {
         }
         if (wpm >= 120) {
           if (color10 < 15) {
-            console.log('reward 15')
+            // console.log('reward 15')
             const hex = {
               userId: session.user.id,
               color: 15
@@ -196,7 +196,7 @@ export default function Trials10() {
   }, [running])
 
   useEffect(() => {
-    console.log('color10:', color10)
+    // console.log('color10:', color10)
   }, [color10])
 
   useEffect(() => {

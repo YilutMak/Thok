@@ -8,7 +8,7 @@ export default function useExp() {
   } = useUser()
 
   const newExp = async (data) => {
-    console.log('exp:', data)
+    // console.log('exp:', data)
     try {
       const resp = await axios({
         method: 'POST',
