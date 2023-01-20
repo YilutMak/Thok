@@ -330,7 +330,7 @@ export default function Trials10() {
       </div>
       <div className="row" style={{ marginTop: '30px' }}>
         <PhraseModule />
-        <h7 className="d-flex justify-content-center" style={{ color: '#787777', fontSize: '9px', marginTop: '20px' }}>press "Tab" to quick reset phrase</h7>
+        <h7 className="d-flex justify-content-center" style={{ color: '#787777', fontSize: '9px', marginTop: '20px' }}>press Tab to quick reset phrase</h7>
       </div>
 
     </>
