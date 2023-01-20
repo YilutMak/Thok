@@ -1,10 +1,10 @@
-import useSWR from 'swr'
+// import useSWR from 'swr'
 
 import withAuth from '@/hoc/withAuth'
-import { fetcher } from '@/hooks/_utils'
+// import { fetcher } from '@/hooks/_utils'
 
 export function Private() {
-  const { data } = useSWR('/api/private', fetcher)
+  // const { data } = useSWR('/api/private', fetcher)
   // console.log(data) // eslint-disable-line
 
   return (

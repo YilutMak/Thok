@@ -7,7 +7,7 @@ import moment from 'moment'
 // import { useRouter } from 'next/router'
 // import { useGenPhrase } from '@/contexts/genPhrase'
 import React, { useEffect } from 'react'
-import Link from 'next/link'
+// import Link from 'next/link'
 // import { match } from 'react-router-dom'
 
 export default function Training() {

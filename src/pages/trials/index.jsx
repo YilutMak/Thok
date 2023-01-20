@@ -7,11 +7,11 @@ export default function SWRIndex() {
   const { push } = useRouter()
 
   const {
-    customize:
-    {
-      outline,
-      fill
-    },
+    // customize:
+    // {
+    // outline,
+    // fill
+    // },
     color10: {
       color10
     },
@@ -28,7 +28,7 @@ export default function SWRIndex() {
   } = useGenPhrase()
 
   const {
-    newPhrase,
+    // newPhrase,
     setPhraseNumber,
     setPhrasePunctuation
   } = useGenPhrase()

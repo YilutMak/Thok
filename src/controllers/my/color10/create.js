@@ -28,7 +28,7 @@ const controllersApiMyColor10Create = async (req, res) => {
 
     return res.status(201).json(newColor)
   } catch (err) {
-    console.error(err)
+    // console.error(err)
     return handleErrors(res, err)
   }
 }

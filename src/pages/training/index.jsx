@@ -190,6 +190,7 @@ export default function Training() {
     if (trainingPoints > 2000) {
       return <h4>null</h4>
     }
+    return null
   }
 
   const checkWordCount = (data) => {

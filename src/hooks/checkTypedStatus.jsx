@@ -26,7 +26,7 @@ export default function CheckingType() {
       errors
     },
     typingAccuracy: {
-      acc,
+      // acc,
       totalChars
     },
     initializeCheckType,

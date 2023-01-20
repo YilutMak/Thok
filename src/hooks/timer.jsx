@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
-import { useTyping } from '@/contexts/typing'
+// import { useTyping } from '@/contexts/typing'
 import { useCheckTyped } from '@/contexts/checkTyped'
 import { useGenPhrase } from '@/contexts/genPhrase'
-import moment from 'moment'
+// import moment from 'moment'
 
 export default function Timer() {
   const {
@@ -15,20 +15,20 @@ export default function Timer() {
     newPhrase
   } = useGenPhrase()
 
-  const {
-    typedPassage: { typed }
-  } = useTyping()
+  // const {
+  //   typedPassage: { typed }
+  // } = useTyping()
 
   const {
     checkTyped: {
-      wordStatus,
+      // wordStatus,
       charStatus
     },
     timer: {
       running,
-      completedPhrase,
-      wordTimestamps,
-      wordsWPM
+      // completedPhrase,
+      wordTimestamps
+      // wordsWPM
     },
     errorsWords: {
       errors
@@ -44,8 +44,8 @@ export default function Timer() {
     timerRun,
     timerStop,
     updateWpm,
-    logPreviousStat,
-    prevStats
+    logPreviousStat
+    // prevStats
   } = useCheckTyped()
 
   const timerMount = () => {
@@ -85,7 +85,7 @@ export default function Timer() {
 
     // ! calculate typing time
     const typingMilliseconds = wordTimestamps[wordTimestamps.length - 1] - wordTimestamps[0]
-    const typingTime = moment(typingMilliseconds).format('mm:ss.SS')
+    // const typingTime = moment(typingMilliseconds).format('mm:ss.SS')
     // console.log('time:', typingTime)
 
     // console.log('wordStatus:', wordStatus)
