@@ -119,6 +119,27 @@ html{
   background-size: cover;
 }
 
+#trials10hurt {
+  background-image: url(../assets/trials10hurt.png);
+  background-size: cover;
+    animation: shake 0.5s;
+  animation-iteration-count: 4;
+}
+
+#trials25hurt {
+  background-image: url(../assets/trials25hurt.png);
+  background-size: cover;
+    animation: shake 0.5s;
+  animation-iteration-count: 4;
+}
+
+#trials50hurt {
+  background-image: url(../assets/trials50hurt.png);
+  background-size: cover;
+    animation: shake 0.5s;
+  animation-iteration-count: 4;
+}
+
 .progress-bar{
   background-color: #b6d3ff !important
 }
@@ -166,4 +187,44 @@ html{
   background-size: cover !important;
   animation: shake 0.5s;
   animation-iteration-count: 2;
+}
+
+#trial10box:hover{
+transform: scale(1.01)
+}
+
+#trial25box:hover {
+  transform: scale(1.01)
+}
+
+#trial50box:hover {
+  transform: scale(1.01)
+}
+
+#trainingButton:hover{
+    transform: scale(1.05)
+}
+
+#trialsButton:hover {
+  transform: scale(1.05)
+}
+
+#navButton:hover {
+  transform: scale(1.03)
+}
+
+#dashboardButton:hover {
+  transform: scale(1.2)
+}
+
+#dashboardSaveButton:hover {
+  transform: scale(1.05)
+}
+
+#dashboardGraphButton:hover {
+  transform: scale(1.02)
+}
+
+#lostButton:hover {
+  transform: scale(1.05)
 }

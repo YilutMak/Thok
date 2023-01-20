@@ -13,6 +13,8 @@ import { useUser } from '@/contexts/user'
 import useExp from '@/hooks/exp'
 import useColor25 from '@/hooks/color25'
 
+let enemyId = 'trials25battle'
+
 export default function Trials25() {
   const { data: session } = useSession()
 
@@ -21,7 +23,7 @@ export default function Trials25() {
   } = useColor25()
 
   const {
-    passage: { joinedPhrase },
+    passage: { phrase, joinedPhrase },
     genPhraseLength: { phraseLength, phraseNumber, phrasePunctuation },
     setWordCount,
     setPhraseNumber,
@@ -34,16 +36,16 @@ export default function Trials25() {
     },
     color25: {
       color25
-    },
-    nextRewards10: {
-      nextTrials10Reward
-    },
-    nextRewards25: {
-      nextTrials25Reward
-    },
-    nextRewards50: {
-      nextTrials50Reward
     }
+    // nextRewards10: {
+    //   nextTrials10Reward
+    // },
+    // nextRewards25: {
+    //   nextTrials25Reward
+    // },
+    // nextRewards50: {
+    //   nextTrials50Reward
+    // }
   } = useUser()
 
   const {
@@ -67,16 +69,19 @@ export default function Trials25() {
       wpm
     },
     prevStats: {
-      prevPhrase,
-      haveNum,
-      havePunc,
+      // prevPhrase,
+      // haveNum,
+      // havePunc,
       prevWpm,
       prevTime,
-      prevErrors,
+      // prevErrors,
       prevChars,
-      prevAcc,
-      prevTimestamps
-    }
+      prevAcc
+      // prevTimestamps
+    },
+    checkTyped: {
+      wordStatus,
+      charStatus }
   } = useCheckTyped()
 
   const {
@@ -198,6 +203,24 @@ export default function Trials25() {
     setWordCount(25)
   }, [])
 
+  useEffect(() => {
+    if (charStatus.length > 0) {
+      if (wordStatus.length > 0) {
+        const activeWordStat = (stat) => stat === 'activeWord'
+        const activeCharStat = (stat) => stat === 'activeChar'
+        const activeWordIndex = wordStatus.findIndex((activeWordStat))
+        const activeCharIndex = charStatus[activeWordIndex][0].findIndex((activeCharStat))
+        const activeWordLastChar = charStatus[activeWordIndex][0].length
+
+        if (charStatus[activeWordIndex][0][activeCharIndex - 1] === 'correctChar' || charStatus[activeWordIndex][0][activeWordLastChar - 1] === 'correctChar') {
+          enemyId = 'trials25hurt'
+        } else {
+          enemyId = 'trials25battle'
+        }
+      }
+    }
+  }, [charStatus, wordStatus, phrase])
+
   const checkReward = () => {
     if (color25 < 16) {
       return <div className=" p-0 m-1" style={{ height: '20px', width: '20px', backgroundColor: '#da0063', borderRadius: '10px' }} />
@@ -217,6 +240,7 @@ export default function Trials25() {
     if (color25 === 20) {
       return null
     }
+    return null
   }
 
   const checkRewardWpm = () => {
@@ -238,6 +262,7 @@ export default function Trials25() {
     if (color25 === 20) {
       return null
     }
+    return null
   }
 
   const checkNumPunc = (data) => {
@@ -260,10 +285,10 @@ export default function Trials25() {
           <div className="col" style={{ marginTop: '50px' }}>
             <div className="" style={{ marginLeft: '50px' }}>
               <div className="row ">
-                <button type="button" style={{ height: '30px', width: '150px', border: 'none', borderRadius: '5px', background: checkNumPunc('num'), color: 'white' }} onClick={() => setPhraseNumber(phraseNumber)}>number</button>
+                <button id="trialsButton" type="button" style={{ height: '30px', width: '150px', border: 'none', borderRadius: '5px', background: checkNumPunc('num'), color: 'white' }} onClick={() => setPhraseNumber(phraseNumber)}>number</button>
               </div>
               <div className="row">
-                <button type="button" style={{ height: '30px', width: '150px', marginTop: '10px', border: 'none', borderRadius: '5px', background: checkNumPunc('punc'), color: 'white' }} onClick={() => setPhrasePunctuation(phrasePunctuation)}>Punctuation</button>
+                <button id="trialsButton" type="button" style={{ height: '30px', width: '150px', marginTop: '10px', border: 'none', borderRadius: '5px', background: checkNumPunc('punc'), color: 'white' }} onClick={() => setPhrasePunctuation(phrasePunctuation)}>Punctuation</button>
               </div>
             </div>
           </div>
@@ -282,7 +307,7 @@ export default function Trials25() {
           </div>
           <div className="col d-flex justify-content-center" style={{ marginLeft: '20px' }}>
             <div>
-              <div id="trials25battle" className="" style={{ marginLeft: '-25px', width: '225px', height: '150px' }} />
+              <div id={enemyId} className="" style={{ marginLeft: '-25px', width: '225px', height: '150px' }} />
               <div style={{ marginTop: '10px' }}>
                 <EnemyHealthBar />
               </div>
@@ -305,6 +330,8 @@ export default function Trials25() {
       </div>
       <div className="row" style={{ marginTop: '30px', marginLeft: '180px', marginRight: '180px' }}>
         <PhraseModule />
+
+        <h7 className="d-flex justify-content-center" style={{ color: '#787777', fontSize: '9px', marginTop: '20px' }}>press "Tab" to quick reset phrase</h7>
       </div>
     </>
   )

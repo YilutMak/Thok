@@ -156,10 +156,10 @@ export default function SWRIndex() {
         <title>Trials main</title>
       </Head>
       <div className="d-flex row mb-3 mx-auto text-center" style={{ width: '100%', marginTop: '20px' }}>
-        <h1>Trials</h1>
+        <h1 style={{ color: '#787777' }}>Trials</h1>
       </div>
 
-      <div type="button" className="col d-flex align-items-center justify-content-center" style={{ height: '280px', minWidth: '1000px', backgroundColor: '#ff7365', marginTop: '0px', marginRight: '30px', marginLeft: '30px', borderRadius: '40px' }} onClick={() => trials10()}>
+      <div id="trial10box" type="button" className="col d-flex align-items-center justify-content-center" style={{ height: '280px', minWidth: '1000px', backgroundColor: '#ff7365', marginTop: '0px', marginRight: '30px', marginLeft: '30px', borderRadius: '40px' }} onClick={() => trials10()}>
         <div style={{ }}>
           <div className="d-flex align-items-center">
             <div className="row" style={{ width: '100%' }}>
@@ -191,7 +191,7 @@ export default function SWRIndex() {
         </div>
       </div>
 
-      <div type="button" className="col d-flex align-items-center justify-content-center" style={{ height: '280px', minWidth: '1000px', backgroundColor: '#ffdf65', marginTop: '20px', marginRight: '30px', marginLeft: '30px', borderRadius: '40px' }} onClick={() => trials25()}>
+      <div id="trial25box" type="button" className="col d-flex align-items-center justify-content-center" style={{ height: '280px', minWidth: '1000px', backgroundColor: '#ffdf65', marginTop: '20px', marginRight: '30px', marginLeft: '30px', borderRadius: '40px' }} onClick={() => trials25()}>
         <div style={{ }}>
           <div className="d-flex align-items-center">
             <div className="row" style={{ width: '100%' }}>
@@ -223,7 +223,7 @@ export default function SWRIndex() {
         </div>
       </div>
 
-      <div type="button" className="col d-flex align-items-center justify-content-center" style={{ height: '280px', minWidth: '1000px', backgroundColor: '#ff65f6', marginTop: '20px', marginRight: '30px', marginLeft: '30px', borderRadius: '40px' }} onClick={() => trials50()}>
+      <div id="trial50box" type="button" className="col d-flex align-items-center justify-content-center" style={{ height: '280px', minWidth: '1000px', backgroundColor: '#ff65f6', marginTop: '20px', marginRight: '30px', marginLeft: '30px', borderRadius: '40px' }} onClick={() => trials50()}>
         <div style={{ }}>
           <div className="d-flex align-items-center">
             <div className="row" style={{ width: '100%' }}>

@@ -61,6 +61,9 @@ export default function SWRIndex() {
     lvl: {
       level
     },
+    health: {
+      hp
+    },
     // exp: {
     //   exp
     // },
@@ -986,51 +989,55 @@ export default function SWRIndex() {
                   <DashBoardAvatar />
                 </div>
                 <h6 style={{ marginTop: '20px' }}>Username: {username}</h6>
-                <h6>Lv: {level}</h6>
+                <div className="d-flex justify-content-center">
+                  <h6 style={{ marginRight: '12px' }}>LV: {level}</h6>
+                  <h6>HP: {hp}</h6>
+
+                </div>
               </div>
 
               <div className="" style={{ marginLeft: '85px' }}>
                 <h6 style={{ marginTop: '20px', marginBottom: '10px' }}>Borders</h6>
                 <div>
                   <div className="row m-0">
-                    <div className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#2d9bf0ff', borderRadius: '15px', border: checkBorder(1) }} onClick={() => setBorder(1)} />
-                    <div className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#eeda94ff', borderRadius: '15px', marginLeft: '25px', border: checkBorder(2) }} onClick={() => setBorder(2)} />
-                    <div className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#ffdcdc', borderRadius: '15px', marginLeft: '25px', border: checkBorder(3) }} onClick={() => setBorder(3)} />
-                    <div className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#69737b', borderRadius: '15px', marginLeft: '25px', border: checkBorder(4) }} onClick={() => setBorder(4)} />
-                    <div className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#e7f963', borderRadius: '15px', marginLeft: '25px', border: checkBorder(5) }} onClick={() => setBorder(5)} />
+                    <div id="dashboardButton" className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#2d9bf0ff', borderRadius: '15px', border: checkBorder(1) }} onClick={() => setBorder(1)} />
+                    <div id="dashboardButton" className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#eeda94ff', borderRadius: '15px', marginLeft: '25px', border: checkBorder(2) }} onClick={() => setBorder(2)} />
+                    <div id="dashboardButton" className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#ffdcdc', borderRadius: '15px', marginLeft: '25px', border: checkBorder(3) }} onClick={() => setBorder(3)} />
+                    <div id="dashboardButton" className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#69737b', borderRadius: '15px', marginLeft: '25px', border: checkBorder(4) }} onClick={() => setBorder(4)} />
+                    <div id="dashboardButton" className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#e7f963', borderRadius: '15px', marginLeft: '25px', border: checkBorder(5) }} onClick={() => setBorder(5)} />
                   </div>
                   <div className="row  mt-4 m-0">
-                    <div className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#b872c6', borderRadius: '15px', border: checkBorder(6) }} onClick={() => setBorder(6)} />
-                    <div className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#f85e45', borderRadius: '15px', marginLeft: '25px', border: checkBorder(7) }} onClick={() => setBorder(7)} />
-                    <div className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#88fdc3', borderRadius: '15px', marginLeft: '25px', border: checkBorder(8) }} onClick={() => setBorder(8)} />
-                    <div className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#ffb757', borderRadius: '15px', marginLeft: '25px', border: checkBorder(9) }} onClick={() => setBorder(9)} />
-                    <div className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#f650b2', borderRadius: '15px', marginLeft: '25px', border: checkBorder(10) }} onClick={() => setBorder(10)} />
+                    <div id="dashboardButton" className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#b872c6', borderRadius: '15px', border: checkBorder(6) }} onClick={() => setBorder(6)} />
+                    <div id="dashboardButton" className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#f85e45', borderRadius: '15px', marginLeft: '25px', border: checkBorder(7) }} onClick={() => setBorder(7)} />
+                    <div id="dashboardButton" className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#88fdc3', borderRadius: '15px', marginLeft: '25px', border: checkBorder(8) }} onClick={() => setBorder(8)} />
+                    <div id="dashboardButton" className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#ffb757', borderRadius: '15px', marginLeft: '25px', border: checkBorder(9) }} onClick={() => setBorder(9)} />
+                    <div id="dashboardButton" className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#f650b2', borderRadius: '15px', marginLeft: '25px', border: checkBorder(10) }} onClick={() => setBorder(10)} />
                   </div>
                 </div>
                 <h6 style={{ marginTop: '30px', marginBottom: '10px' }}>Colors</h6>
                 <div>
                   <div className="row m-0">
-                    <div className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#fef445', borderRadius: '15px', border: checkColor(11) }} onClick={() => setColor(11)} />
-                    <div className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#f24726', borderRadius: '15px', marginLeft: '25px', border: checkColor(12) }} onClick={() => setColor(12)} />
-                    <div className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#12cdd4', borderRadius: '15px', marginLeft: '25px', border: checkColor(13) }} onClick={() => setColor(13)} />
-                    <div className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#fac710', borderRadius: '15px', marginLeft: '25px', border: checkColor(14) }} onClick={() => setColor(14)} />
-                    <div className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#cee741', borderRadius: '15px', marginLeft: '25px', border: checkColor(15) }} onClick={() => setColor(15)} /></div>
+                    <div id="dashboardButton" type="button" className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#fef445', borderRadius: '15px', border: checkColor(11) }} onClick={() => setColor(11)} />
+                    <div id="dashboardButton" className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#f24726', borderRadius: '15px', marginLeft: '25px', border: checkColor(12) }} onClick={() => setColor(12)} />
+                    <div id="dashboardButton" className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#12cdd4', borderRadius: '15px', marginLeft: '25px', border: checkColor(13) }} onClick={() => setColor(13)} />
+                    <div id="dashboardButton" className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#fac710', borderRadius: '15px', marginLeft: '25px', border: checkColor(14) }} onClick={() => setColor(14)} />
+                    <div id="dashboardButton" className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#cee741', borderRadius: '15px', marginLeft: '25px', border: checkColor(15) }} onClick={() => setColor(15)} /></div>
                   <div className="row  mt-4 m-0">
-                    <div className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#da0063', borderRadius: '15px', border: checkColor(16) }} onClick={() => setColor(16)} />
-                    <div className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#652cb3', borderRadius: '15px', marginLeft: '25px', border: checkColor(17) }} onClick={() => setColor(17)} />
-                    <div className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#8fd14f', borderRadius: '15px', marginLeft: '25px', border: checkColor(18) }} onClick={() => setColor(18)} />
-                    <div className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#1084fa', borderRadius: '15px', marginLeft: '25px', border: checkColor(19) }} onClick={() => setColor(19)} />
-                    <div className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#ff4a4a', borderRadius: '15px', marginLeft: '25px', border: checkColor(20) }} onClick={() => setColor(20)} />
+                    <div id="dashboardButton" className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#da0063', borderRadius: '15px', border: checkColor(16) }} onClick={() => setColor(16)} />
+                    <div id="dashboardButton" className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#652cb3', borderRadius: '15px', marginLeft: '25px', border: checkColor(17) }} onClick={() => setColor(17)} />
+                    <div id="dashboardButton" className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#8fd14f', borderRadius: '15px', marginLeft: '25px', border: checkColor(18) }} onClick={() => setColor(18)} />
+                    <div id="dashboardButton" className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#1084fa', borderRadius: '15px', marginLeft: '25px', border: checkColor(19) }} onClick={() => setColor(19)} />
+                    <div id="dashboardButton" className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#ff4a4a', borderRadius: '15px', marginLeft: '25px', border: checkColor(20) }} onClick={() => setColor(20)} />
                   </div>
                   <div className="row mt-4 m-0">
-                    <div className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#8e89cc', borderRadius: '15px', border: checkColor(21) }} onClick={() => setColor(21)} />
-                    <div className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#7ceeab', borderRadius: '15px', marginLeft: '25px', border: checkColor(22) }} onClick={() => setColor(22)} />
-                    <div className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#a3a3a3ff', borderRadius: '15px', marginLeft: '25px', border: checkColor(23) }} onClick={() => setColor(23)} />
-                    <div className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#edb6da', borderRadius: '15px', marginLeft: '25px', border: checkColor(24) }} onClick={() => setColor(24)} />
-                    <div className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#383838', borderRadius: '15px', marginLeft: '25px', border: checkColor(25) }} onClick={() => setColor(25)} />
+                    <div id="dashboardButton" className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#8e89cc', borderRadius: '15px', border: checkColor(21) }} onClick={() => setColor(21)} />
+                    <div id="dashboardButton" className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#7ceeab', borderRadius: '15px', marginLeft: '25px', border: checkColor(22) }} onClick={() => setColor(22)} />
+                    <div id="dashboardButton" className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#a3a3a3ff', borderRadius: '15px', marginLeft: '25px', border: checkColor(23) }} onClick={() => setColor(23)} />
+                    <div id="dashboardButton" className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#edb6da', borderRadius: '15px', marginLeft: '25px', border: checkColor(24) }} onClick={() => setColor(24)} />
+                    <div id="dashboardButton" className=" p-0" style={{ height: '30px', width: '30px', backgroundColor: '#383838', borderRadius: '15px', marginLeft: '25px', border: checkColor(25) }} onClick={() => setColor(25)} />
                   </div>
                 </div>
-                <button type="button" className="btn" style={{ marginTop: '35px', background: '#ff7365', color: 'white', width: '100px', marginLeft: '75px' }} onClick={() => setNewCustom(borderSelected, colorSelected)}>Save</button>
+                <button id="dashboardSaveButton" type="button" className="btn" style={{ marginTop: '35px', background: '#ff7365', color: 'white', width: '100px', marginLeft: '75px' }} onClick={() => setNewCustom(borderSelected, colorSelected)}>Save</button>
               </div>
             </div>
           </div>
@@ -1042,11 +1049,11 @@ export default function SWRIndex() {
               <h1 style={{ marginTop: '20px', marginBottom: '10px' }}>Statistics</h1>
 
               <div className="" style={{ marginBottom: '0px' }}>
-                <button type="button" className="btn" style={{ color: 'white', background: checkGraphType('training'), width: '180px', height: '28px', marginLeft: '5px', fontSize: '12px' }} onClick={() => setStatView('training')}>Training</button>
-                <button type="button" className="btn" style={{ color: 'white', background: checkGraphType('trials'), width: '180px', height: '28px', marginLeft: '5px', fontSize: '12px' }} onClick={() => setStatView('trials')}>Trials</button>
-                <button type="button" className="btn" style={{ color: 'white', background: checkGraphWordCount(10), width: '180px', height: '28px', marginLeft: '5px', fontSize: '12px' }} onClick={() => setViewWordCount(10)}>10 words</button>
-                <button type="button" className="btn" style={{ color: 'white', background: checkGraphWordCount(25), width: '180px', height: '28px', marginLeft: '5px', fontSize: '12px' }} onClick={() => setViewWordCount(25)}>25 words</button>
-                <button type="button" className="btn" style={{ color: 'white', background: checkGraphWordCount(50), width: '180px', height: '28px', marginLeft: '5px', fontSize: '12px' }} onClick={() => setViewWordCount(50)}>50 words</button>
+                <button id="dashboardGraphButton" type="button" className="btn" style={{ color: 'white', background: checkGraphType('training'), width: '180px', height: '28px', marginLeft: '5px', fontSize: '12px' }} onClick={() => setStatView('training')}>Training</button>
+                <button id="dashboardGraphButton" type="button" className="btn" style={{ color: 'white', background: checkGraphType('trials'), width: '180px', height: '28px', marginLeft: '5px', fontSize: '12px' }} onClick={() => setStatView('trials')}>Trials</button>
+                <button id="dashboardGraphButton" type="button" className="btn" style={{ color: 'white', background: checkGraphWordCount(10), width: '180px', height: '28px', marginLeft: '5px', fontSize: '12px' }} onClick={() => setViewWordCount(10)}>10 words</button>
+                <button id="dashboardGraphButton" type="button" className="btn" style={{ color: 'white', background: checkGraphWordCount(25), width: '180px', height: '28px', marginLeft: '5px', fontSize: '12px' }} onClick={() => setViewWordCount(25)}>25 words</button>
+                <button id="dashboardGraphButton" type="button" className="btn" style={{ color: 'white', background: checkGraphWordCount(50), width: '180px', height: '28px', marginLeft: '5px', fontSize: '12px' }} onClick={() => setViewWordCount(50)}>50 words</button>
               </div>
 
               <div className="row">

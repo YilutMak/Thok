@@ -98,7 +98,7 @@ function LayoutsNavbar() {
   return (
     <Navbar expand="lg" style={{ background: '#85beca' }}>
       <Container>
-        <Navbar.Brand href="/" style={{ color: 'white' }}>Thok</Navbar.Brand>
+        <Navbar.Brand id="navButton" href="/" style={{ color: 'white' }}>Thok</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" style={{ width: '100%' }}>
           <Nav className="">
@@ -107,9 +107,9 @@ function LayoutsNavbar() {
                 <div className="d-flex align-items-center">
 
                   <div className="d-flex">
-                    <Nav.Link href="/user" style={{ color: 'white' }}>Dashboard</Nav.Link>
-                    <Nav.Link href="/training" style={{ color: 'white' }}>Training</Nav.Link>
-                    <Nav.Link href="/trials" style={{ color: 'white' }}>Trials</Nav.Link>
+                    <Nav.Link id="navButton" href="/user" style={{ color: 'white' }}>Dashboard</Nav.Link>
+                    <Nav.Link id="navButton" href="/training" style={{ color: 'white' }}>Training</Nav.Link>
+                    <Nav.Link id="navButton" href="/trials" style={{ color: 'white' }}>Trials</Nav.Link>
                   </div>
                   <div style={{ width: '700px', height: '40px' }} />
                   <div className="d-flex justify-content-end align-items-center">
@@ -131,13 +131,13 @@ function LayoutsNavbar() {
                       <div style={{ fontSize: '10px', color: 'white' }}><SmallExpBar /></div>
                     </div>
 
-                    <Nav.Link onClick={() => signOut({ callbackUrl: '/' })} style={{ color: 'white' }}>Logout</Nav.Link>
+                    <Nav.Link id="navButton" onClick={() => signOut({ callbackUrl: '/' })} style={{ color: 'white' }}>Logout</Nav.Link>
 
                   </div>
                 </div>
 
               ) : (
-                <Nav.Link onClick={() => signIn()} style={{ color: 'white' }}>Login</Nav.Link>
+                <Nav.Link id="navButton" onClick={() => signIn()} style={{ color: 'white' }}>Login</Nav.Link>
               )
             }
           </Nav>

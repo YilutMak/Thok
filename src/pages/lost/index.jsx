@@ -126,9 +126,9 @@ export default function Training() {
       </div>
 
       <div className="row text-center mx-auto" style={{ width: '420px', marginTop: '20px' }}>
-        <button type="button" style={{ height: '30px', width: '200px', marginTop: '10px', border: 'none', borderRadius: '15px', background: '#88bdcb' }}><a href="/training" style={{ textDecoration: 'none', color: 'white' }}>New training!</a></button>
+        <button id="lostButton" type="button" style={{ height: '30px', width: '200px', marginTop: '10px', border: 'none', borderRadius: '15px', background: '#88bdcb' }}><a href="/training" style={{ textDecoration: 'none', color: 'white' }}>New training!</a></button>
 
-        <button type="button" style={{ marginLeft: '20px', height: '30px', width: '200px', marginTop: '10px', border: 'none', borderRadius: '15px', background: '#88bdcb' }}><a href="/trials" style={{ textDecoration: 'none', color: 'white' }}>Challege trials!</a></button>
+        <button id="lostButton" type="button" style={{ marginLeft: '20px', height: '30px', width: '200px', marginTop: '10px', border: 'none', borderRadius: '15px', background: '#88bdcb' }}><a href="/trials" style={{ textDecoration: 'none', color: 'white' }}>Challege trials!</a></button>
       </div>
     </div>
   )

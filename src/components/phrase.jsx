@@ -62,7 +62,7 @@ export default function Phrase() {
   // console.log('phrasePunctuation:', phrasePunctuation)
 
   return (
-    <div style={{ height: '300px' }}>
+    <div style={{ height: '' }}>
       <div className="d-flex flex-wrap justify-content-center">{
         phrase.map((word, i) => (
           <div className="d-flex" style={{ margin: '5px' }} key={`${i}.${word}`}>

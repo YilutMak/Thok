@@ -60,15 +60,15 @@ export default function Training() {
       wpm
     },
     prevStats: {
-      prevPhrase,
-      haveNum,
-      havePunc,
+      // prevPhrase,
+      // haveNum,
+      // havePunc,
       prevWpm,
       prevTime,
       prevErrors,
       prevChars,
-      prevAcc,
-      prevTimestamps
+      prevAcc
+      // prevTimestamps
     },
     updateLost
   } = useCheckTyped()
@@ -225,19 +225,19 @@ export default function Training() {
         <div className="col" style={{ width: '400px' }}>
 
           <div className="col" style={{ marginLeft: '100px' }}>
-            <button className="row mb-2 mx-0 p-0" type="button" onClick={() => setWordCount(10)} style={{ width: '50px', height: '50px', borderRadius: '50%', background: checkWordCount(10), border: 'none' }}>
+            <button id="trainingButton" className="row mb-2 mx-0 p-0" type="button" onClick={() => setWordCount(10)} style={{ width: '50px', height: '50px', borderRadius: '50%', background: checkWordCount(10), border: 'none' }}>
               <div style={{ paddingLeft: '12px', marginTop: '12px', color: 'white' }}>10</div>
             </button>
-            <button className="row mb-2 mx-0 p-0" type="button" onClick={() => setWordCount(25)} style={{ width: '50px', height: '50px', borderRadius: '50%', background: checkWordCount(25), border: 'none' }}>
+            <button id="trainingButton" className="row mb-2 mx-0 p-0" type="button" onClick={() => setWordCount(25)} style={{ width: '50px', height: '50px', borderRadius: '50%', background: checkWordCount(25), border: 'none' }}>
               <div style={{ paddingLeft: '12px', marginTop: '12px', color: 'white' }}>25</div>
             </button>
-            <button className="row mb-2 mx-0 p-0" type="button" onClick={() => setWordCount(50)} style={{ width: '50px', height: '50px', borderRadius: '50%', background: checkWordCount(50), border: 'none' }}>
+            <button id="trainingButton" className="row mb-2 mx-0 p-0" type="button" onClick={() => setWordCount(50)} style={{ width: '50px', height: '50px', borderRadius: '50%', background: checkWordCount(50), border: 'none' }}>
               <div style={{ paddingLeft: '12px', marginTop: '12px', color: 'white' }}>50</div>
             </button>
-            <button className="row mb-2 mx-0 p-0 " type="button" onClick={() => setPhraseNumber(phraseNumber)} style={{ width: '50px', height: '50px', borderRadius: '50%', background: checkNumPunc('num'), border: 'none' }}>
+            <button id="trainingButton" className="row mb-2 mx-0 p-0 " type="button" onClick={() => setPhraseNumber(phraseNumber)} style={{ width: '50px', height: '50px', borderRadius: '50%', background: checkNumPunc('num'), border: 'none' }}>
               <div style={{ marginRight: '0px', marginTop: '12px', paddingLeft: '9px', color: 'white' }}>num</div>
             </button>
-            <button className="row mb-2 mx-0 p-0 " type="button" onClick={() => setPhrasePunctuation(phrasePunctuation)} style={{ width: '50px', height: '50px', borderRadius: '50%', background: checkNumPunc('punc'), border: 'none' }}>
+            <button id="trainingButton" className="row mb-2 mx-0 p-0 " type="button" onClick={() => setPhrasePunctuation(phrasePunctuation)} style={{ width: '50px', height: '50px', borderRadius: '50%', background: checkNumPunc('punc'), border: 'none' }}>
               <div style={{ paddingLeft: '7px', marginTop: '12px', color: 'white' }}>Punc</div>
             </button>
           </div>
@@ -247,7 +247,7 @@ export default function Training() {
           <Avatar />
           <div style={{ marginTop: '20px' }}>
             <div style={{ marginLeft: '50px' }}>
-              <div style={{ marginLeft: '85px', fontSize: '10px' }}>Health</div>
+              <div style={{ marginLeft: '90px', fontSize: '10px' }}>Health</div>
               <HealthBar />
             </div>
             <div style={{ marginTop: '3px', marginLeft: '50px' }}>
@@ -255,6 +255,7 @@ export default function Training() {
               <ExpBar />
             </div>
             <div style={{ marginTop: '10px' }}>
+              <div style={{ marginLeft: '120px', fontSize: '10px' }}>Training Points:</div>
               <TrainingBar />
             </div>
             <div className="row" style={{ marginTop: '10px' }}>
@@ -279,6 +280,7 @@ export default function Training() {
 
       <div className="row text-center mx-auto" style={{ width: '850px', marginTop: '20px' }}>
         <PhraseModule />
+        <h7 style={{ color: '#787777', fontSize: '9px', marginTop: '20px' }}>press "Tab" to quick reset phrase</h7>
       </div>
 
     </>

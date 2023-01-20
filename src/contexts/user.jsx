@@ -13,7 +13,7 @@ const initialLevel = {
 }
 
 const initialHp = {
-  hp: 1
+  hp: 2
 }
 
 const initialExp = {
@@ -131,7 +131,7 @@ export function UserProvider({ children }) {
     // set hp with level
     const health = Math.ceil(1 * (1.1 ** lvl))
     setHpState(produce(hpState, (draft) => {
-      draft.hp = health
+      draft.hp = health + 1
     }))
   }
 
