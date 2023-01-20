@@ -1,6 +1,6 @@
 import ProgressBar from 'react-bootstrap/ProgressBar'
 // import { useEffect } from 'react'
-import { useUser } from '@/contexts/user'
+// import { useUser } from '@/contexts/user'
 import { useEffect } from 'react'
 import { useGenPhrase } from '@/contexts/genPhrase'
 import { useCheckTyped } from '@/contexts/checkTyped'

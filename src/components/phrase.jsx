@@ -16,9 +16,9 @@ export default function Phrase() {
   } = Timer()
 
   const {
-    passage: { phrase },
+    passage: { phrase }
     // genPhraseLength: { phraseLength, phraseNumber, phrasePunctuation },
-    newPhrase
+    // newPhrase
   } = useGenPhrase()
 
   const {

@@ -135,6 +135,12 @@ export function UserProvider({ children }) {
     }))
   }
 
+  const setRate = async (data) => {
+    setRateState(produce(next10RewardState, (draft) => {
+      draft.rate = data
+    }))
+  }
+
   const setNextTrainingReward = async (hex) => {
     setNextTrainingRewardState(produce(next10RewardState, (draft) => {
       draft.nextTrainingReward = hex
@@ -363,7 +369,8 @@ export function UserProvider({ children }) {
     setTrainingLog,
     setTrialsLog,
     setStatView,
-    setViewWordCount
+    setViewWordCount,
+    setRate
   }
 
   return <userContext.Provider value={contextData}>{children}</userContext.Provider>

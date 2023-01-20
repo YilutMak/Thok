@@ -1,7 +1,7 @@
 import ProgressBar from 'react-bootstrap/ProgressBar'
 // import { useEffect } from 'react'
-import Timer from '@/hooks/timer'
-import { useGenPhrase } from '@/contexts/genPhrase'
+// import Timer from '@/hooks/timer'
+// import { useGenPhrase } from '@/contexts/genPhrase'
 import { useCheckTyped } from '@/contexts/checkTyped'
 
 function HealthBar() {
@@ -11,13 +11,13 @@ function HealthBar() {
     }
   } = useCheckTyped()
 
-  const {
-    resetPhrase
-  } = Timer()
-
-  const {
-    newPhrase
-  } = useGenPhrase()
+  // const {
+  //   resetPhrase
+  // } = Timer()
+  //
+  // const {
+  //   newPhrase
+  // } = useGenPhrase()
 
   const hp = 3
   const hpLeft = hp - errors.length

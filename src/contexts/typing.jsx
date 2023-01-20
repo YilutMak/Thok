@@ -302,7 +302,7 @@ export function TypingProvider({ children }) {
         break
 
       default:
-        console.log('invalid key:', key)
+        // console.log('invalid key:', key)
         break
     }
   }

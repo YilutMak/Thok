@@ -43,8 +43,8 @@ function LayoutsNavbar() {
 
   const {
     user: {
-      username,
-      userId
+      username
+      // userId
     },
     lvl: {
       level
