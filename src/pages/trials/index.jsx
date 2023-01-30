@@ -185,7 +185,6 @@ export default function SWRIndex() {
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>

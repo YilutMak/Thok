@@ -22,8 +22,8 @@ export default function Phrase() {
   } = useGenPhrase()
 
   const {
-    typedPassage: { typed },
-    typing
+    typedPassage: { typed }
+    // typing
   } = useTyping()
 
   const {
@@ -32,14 +32,8 @@ export default function Phrase() {
       charStatus }
   } = useCheckTyped()
 
-  const keyDownHandler = (e) => {
-    e.preventDefault()
-    if (e.repeat) return
-    typing(e.key)
-  }
-
   useEffect(() => {
-    document.addEventListener('keydown', keyDownHandler)
+    // keyDownAdd()
   }, [])
 
   useEffect(() => {

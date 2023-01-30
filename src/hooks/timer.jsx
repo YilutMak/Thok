@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 // import { useTyping } from '@/contexts/typing'
 import { useCheckTyped } from '@/contexts/checkTyped'
 import { useGenPhrase } from '@/contexts/genPhrase'
+import UseKeyListener from '@/hooks/keyListener'
 // import moment from 'moment'
 
 export default function Timer() {
@@ -48,6 +49,11 @@ export default function Timer() {
     // prevStats
   } = useCheckTyped()
 
+  const {
+    // keyDownAdd
+    keyDownDelete
+  } = UseKeyListener()
+
   const timerMount = () => {
     // console.log('charStatus:', charStatus)
     if (charStatus.length > 0) {
@@ -70,6 +76,7 @@ export default function Timer() {
   }
 
   const resetPhrase = () => {
+    keyDownDelete()
     if (phrase.length > 0 && charStatus.length > 0) {
       // set new phrase
       const lastWordStatus = charStatus[charStatus.length - 1][0]

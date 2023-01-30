@@ -42,7 +42,7 @@ export default function Training() {
 
       <div className="row text-center mx-auto" style={{ width: '850px', marginTop: '30px' }}>
         <PhraseModule />
-        <h7 style={{ color: '#787777', fontSize: '9px', marginTop: '20px' }}>press Tab to quick reset phrase</h7>
+        <h6 style={{ color: '#787777', fontSize: '9px', marginTop: '20px' }}>press Tab to quick reset phrase</h6>
       </div>
 
     </>

@@ -4,14 +4,14 @@ import { useUser } from '@/contexts/user'
 import LostAvatar from '@/components/lostAvatar'
 import MidExpBar from '@/components/midExpBar'
 import moment from 'moment'
-// import { useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 // import { useGenPhrase } from '@/contexts/genPhrase'
 import React, { useEffect } from 'react'
-// import Link from 'next/link'
+import Link from 'next/link'
 // import { match } from 'react-router-dom'
 
 export default function Training() {
-  // const { push } = useRouter()
+  const { push } = useRouter()
 
   const {
     lvl: {
@@ -126,10 +126,12 @@ export default function Training() {
       </div>
 
       <div className="row text-center mx-auto" style={{ width: '420px', marginTop: '20px' }}>
-        <button id="lostButton" type="button" style={{ height: '30px', width: '200px', marginTop: '10px', border: 'none', borderRadius: '15px', background: '#88bdcb' }}><a href="/training" style={{ textDecoration: 'none', color: 'white' }}>New training!</a></button>
+        <button id="lostButton" type="button" style={{ height: '30px', width: '200px', marginTop: '10px', border: 'none', borderRadius: '15px', background: '#88bdcb' }}> <Link href="/training" style={{ textDecoration: 'none', color: 'white' }}>New training!</Link></button>
 
-        <button id="lostButton" type="button" style={{ marginLeft: '20px', height: '30px', width: '200px', marginTop: '10px', border: 'none', borderRadius: '15px', background: '#88bdcb' }}><a href="/trials" style={{ textDecoration: 'none', color: 'white' }}>Challege trials!</a></button>
+        <button id="lostButton" type="button" style={{ marginLeft: '20px', height: '30px', width: '200px', marginTop: '10px', border: 'none', borderRadius: '15px', background: '#88bdcb' }}><Link href="/trials" style={{ textDecoration: 'none', color: 'white' }}>Challege trials!</Link></button>
       </div>
     </div>
   )
 }
+
+// <Link href="/training" style={{ textDecoration: 'none', color: 'white' }}> </Link>

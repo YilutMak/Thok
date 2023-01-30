@@ -3,6 +3,7 @@ import { useGenPhrase } from '@/contexts/genPhrase'
 import PhraseModule from '@/components/phrase'
 import { useCheckTyped } from '@/contexts/checkTyped'
 import Timer from '@/hooks/timer'
+import { useTyping } from '@/contexts/typing'
 import useTraining from '@/hooks/training'
 import useExp from '@/hooks/exp'
 import { useSession } from 'next-auth/react'
@@ -74,6 +75,13 @@ export default function Training() {
   } = useCheckTyped()
 
   const {
+    typedPassage: {
+      typed
+    }
+    // typeReset
+  } = useTyping()
+
+  const {
     logTraining
   } = useTraining()
 
@@ -95,6 +103,11 @@ export default function Training() {
   }, [])
 
   useEffect(() => {
+    console.log('typed:', typed)
+  }, [typed])
+
+  useEffect(() => {
+    // typeReset()
     resetPhrase()
     if (session) {
       // console.log('completedPhrase:', completedPhrase)
@@ -281,7 +294,7 @@ export default function Training() {
 
       <div className="row text-center mx-auto" style={{ width: '850px', marginTop: '20px' }}>
         <PhraseModule />
-        <h7 style={{ color: '#787777', fontSize: '9px', marginTop: '20px' }}>press Tab to quick reset phrase</h7>
+        <h6 style={{ color: '#787777', fontSize: '9px', marginTop: '20px' }}>press Tab to quick reset phrase</h6>
       </div>
 
     </>

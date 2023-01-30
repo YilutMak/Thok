@@ -12,10 +12,16 @@ import { useUser } from '@/contexts/user'
 import SmallExpBar from '@/components/smallExpBar'
 import useColor50 from '@/hooks/color50'
 import useColor25 from '@/hooks/color25'
+import UseKeyListener from '@/hooks/keyListener'
 
 function LayoutsNavbar() {
   // console.log(currentUser)
   const { data: session } = useSession()
+
+  const {
+    keyDownAdd
+    // keyDownDelete
+  } = UseKeyListener()
 
   const {
     getMyExp
@@ -72,6 +78,10 @@ function LayoutsNavbar() {
     setUser,
     setLevel
   } = useUser()
+
+  useEffect(() => {
+    keyDownAdd()
+  }, [])
 
   useEffect(() => {
     if (session) {

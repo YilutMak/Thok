@@ -964,12 +964,12 @@ export default function SWRIndex() {
     }
     return (
       <>
-        <h7>Wpm: {sessionWpm || '0'}</h7><br />
-        <h7>Characters: {sessionChar || '0'}</h7><br />
-        <h7>Time: {sessionTime || '00:00'}s</h7><br />
-        <h7>Error: {sessionError || 'none'}</h7><br />
-        <h7>Num: {`${sessionNum}`}</h7><br />
-        <h7>Punc: {`${sessionPunc}`}</h7>
+        <h6>Wpm: {sessionWpm || '0'}</h6><br />
+        <h6>Characters: {sessionChar || '0'}</h6><br />
+        <h6>Time: {sessionTime || '00:00'}s</h6><br />
+        <h6>Error: {sessionError || 'none'}</h6><br />
+        <h6>Num: {`${sessionNum}`}</h6><br />
+        <h6>Punc: {`${sessionPunc}`}</h6>
       </>
     )
   }
@@ -1141,7 +1141,7 @@ export default function SWRIndex() {
             <div className="row " style={{ height: '385px', width: '335px', padding: '0px', marginTop: '15px', marginLeft: '15px' }}>
               <div className="text-center" style={{ background: '#e7f2f5', borderRadius: '60px', overflow: 'hidden' }}>
                 <h1 style={{ marginTop: '20px', marginBottom: '15px' }}>Training</h1>
-                <h7>Training points:</h7>
+                <h6>Training points:</h6>
                 <h5>{trainingPoints}/{maxPoints()} </h5>
 
                 <div className="d-flex justify-content-center" style={{ marginBottom: '10px' }}>

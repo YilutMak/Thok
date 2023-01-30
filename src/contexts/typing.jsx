@@ -8,6 +8,12 @@ const initialTyping = { typed: [] }
 export function TypingProvider({ children }) {
   const [typeState, setTypeState] = useState(initialTyping)
 
+  const typeReset = () => {
+    setTypeState(produce(typeState, (draft) => {
+      draft.typed = []
+    }))
+  }
+
   const typing = (key) => {
     const characterPush = (char) => {
       setTypeState(produce(typeState, (draft) => {
@@ -309,7 +315,8 @@ export function TypingProvider({ children }) {
 
   const contextData = {
     typedPassage: typeState,
-    typing
+    typing,
+    typeReset
   }
 
   return <typingContext.Provider value={contextData}>{children}</typingContext.Provider>
