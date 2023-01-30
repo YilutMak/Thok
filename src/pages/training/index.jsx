@@ -103,7 +103,7 @@ export default function Training() {
   }, [])
 
   useEffect(() => {
-    console.log('typed:', typed)
+    // console.log('typed:', typed)
   }, [typed])
 
   useEffect(() => {

@@ -4,14 +4,14 @@ import { useUser } from '@/contexts/user'
 import LostAvatar from '@/components/lostAvatar'
 import MidExpBar from '@/components/midExpBar'
 import moment from 'moment'
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
 // import { useGenPhrase } from '@/contexts/genPhrase'
 import React, { useEffect } from 'react'
 import Link from 'next/link'
 // import { match } from 'react-router-dom'
 
 export default function Training() {
-  const { push } = useRouter()
+  // const { push } = useRouter()
 
   const {
     lvl: {
