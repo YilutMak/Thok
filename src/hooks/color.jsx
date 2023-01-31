@@ -13,7 +13,7 @@ export default function useColors() {
       const resp = await axios({
         method: 'POST',
         // url: `${process.env.API_URL}/api/my/colors`,
-        url: 'http://localhost:3000/api/my/colors',
+        url: '/api/my/colors',
         data
       })
       setColors(resp.data)
@@ -29,7 +29,7 @@ export default function useColors() {
       const resp = await axios({
         method: 'GET',
         // url: `${process.env.API_URL}/api/my/profile`
-        url: 'http://localhost:3000/api/my/colors',
+        url: '/api/my/colors',
         params: {
           userId: data
         }

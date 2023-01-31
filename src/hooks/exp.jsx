@@ -13,7 +13,7 @@ export default function useExp() {
       const resp = await axios({
         method: 'POST',
         // url: `${process.env.API_URL}/api/my/exp`,
-        url: 'http://localhost:3000/api/my/exp',
+        url: '/api/my/exp',
         data
       })
       setExp(resp.data)
@@ -30,7 +30,7 @@ export default function useExp() {
       const resp = await axios({
         method: 'GET',
         // url: `${process.env.API_URL}/api/my/profile`
-        url: 'http://localhost:3000/api/my/exp',
+        url: '/api/my/exp',
         params: {
           userId: data
         }

@@ -14,7 +14,7 @@ export default function useColor25() {
       const resp = await axios({
         method: 'POST',
         // url: `${process.env.API_URL}/api/my/colors`,
-        url: 'http://localhost:3000/api/my/color25',
+        url: '/api/my/color25',
         data
       })
       setColor25(resp.data)
@@ -30,7 +30,7 @@ export default function useColor25() {
       const resp = await axios({
         method: 'GET',
         // url: `${process.env.API_URL}/api/my/profile`
-        url: 'http://localhost:3000/api/my/color25',
+        url: '/api/my/color25',
         params: {
           userId: data
         }

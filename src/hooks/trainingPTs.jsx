@@ -13,7 +13,7 @@ export default function useTrainingPTs() {
       const resp = await axios({
         method: 'POST',
         // url: `${process.env.API_URL}/api/my/color`,
-        url: 'http://localhost:3000/api/my/trainingPts',
+        url: '/api/my/trainingPts',
         data
       })
       // console.log('resp training pts:', resp.data)
@@ -30,7 +30,7 @@ export default function useTrainingPTs() {
       const resp = await axios({
         method: 'GET',
         // url: `${process.env.API_URL}/api/my/profile`
-        url: 'http://localhost:3000/api/my/trainingPts',
+        url: '/api/my/trainingPts',
         params: {
           userId: data
         }
