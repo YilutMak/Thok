@@ -964,12 +964,12 @@ export default function SWRIndex() {
     }
     return (
       <>
-        <h6>Wpm: {sessionWpm || '0'}</h6><br />
-        <h6>Characters: {sessionChar || '0'}</h6><br />
-        <h6>Time: {sessionTime || '00:00'}s</h6><br />
-        <h6>Error: {sessionError || 'none'}</h6><br />
-        <h6>Num: {`${sessionNum}`}</h6><br />
-        <h6>Punc: {`${sessionPunc}`}</h6>
+        <div>Wpm: {sessionWpm || '0'}</div><br />
+        <div>Characters: {sessionChar || '0'}</div><br />
+        <div>Time: {sessionTime || '00:00'}s</div><br />
+        <div>Error: {sessionError || 'none'}</div><br />
+        <div>Num: {`${sessionNum}`}</div><br />
+        <div>Punc: {`${sessionPunc}`}</div>
       </>
     )
   }
@@ -1072,7 +1072,7 @@ export default function SWRIndex() {
                     <Line type="monotone" dataKey="wpm" stroke="#85beca" />
                   </LineChart>
                 </div>
-                <div className="col text-left" style={{ marginTop: '40px', marginRight: '80px' }}>
+                <div className="col text-left" style={{ marginTop: '15px', marginRight: '80px', height: '250px' }}>
                   <h4>Session best:</h4>
                   {sessionStats()}
                 </div>
